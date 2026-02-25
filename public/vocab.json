@@ -1,0 +1,3248 @@
+[
+  {
+    "id": "0000",
+    "word": "alter",
+    "cn": "改变，改动，变更",
+    "example": "He decided to alter his plan."
+  },
+  {
+    "id": "0001",
+    "word": "burst",
+    "cn": "突然发生，爆裂",
+    "example": "She burst into tears."
+  },
+  {
+    "id": "0002",
+    "word": "dispose",
+    "cn": "除掉；处理；解决(of)",
+    "example": "He disposed of the old books."
+  },
+  {
+    "id": "0003",
+    "word": "blast",
+    "cn": "爆炸；气流 vi. 炸，炸掉",
+    "example": "Ten people were injured in the blast."
+  },
+  {
+    "id": "0004",
+    "word": "consume",
+    "cn": "消耗，耗尽",
+    "example": "The task consumed a lot of time."
+  },
+  {
+    "id": "0005",
+    "word": "split",
+    "cn": "劈开；割裂；分裂",
+    "example": "The class was split into two groups."
+  },
+  {
+    "id": "0006",
+    "word": "spit",
+    "cn": "吐（唾液等）；唾弃",
+    "example": "He spat on the ground."
+  },
+  {
+    "id": "0007",
+    "word": "spill",
+    "cn": "溢出，溅出，倒出",
+    "example": "She spilled milk on the table."
+  },
+  {
+    "id": "0008",
+    "word": "slip",
+    "cn": "滑动，滑落；忽略",
+    "example": "He slipped on the wet floor."
+  },
+  {
+    "id": "0009",
+    "word": "slide",
+    "cn": "滑动，滑落 n. 滑动；滑面；幻灯片",
+    "example": "The child slid down the hill."
+  },
+  {
+    "id": "0010",
+    "word": "bacteria",
+    "cn": "细菌",
+    "example": "Bacteria can spread quickly in warm weather."
+  },
+  {
+    "id": "0011",
+    "word": "breed",
+    "cn": "种，由...养殖，产仔",
+    "example": "They breed fish in the pond."
+  },
+  {
+    "id": "0012",
+    "word": "budget",
+    "cn": "预算，编预算，作安排",
+    "example": "Our travel budget is very limited."
+  },
+  {
+    "id": "0013",
+    "word": "candidate",
+    "cn": "候选人",
+    "example": "She is a strong candidate for the job."
+  },
+  {
+    "id": "0014",
+    "word": "campus",
+    "cn": "校园",
+    "example": "He lives on campus."
+  },
+  {
+    "id": "0015",
+    "word": "liberal",
+    "cn": "慷慨的；丰富的；自由的",
+    "example": "He is liberal with his money."
+  },
+  {
+    "id": "0016",
+    "word": "transform",
+    "cn": "转变，变革；变换",
+    "example": "The new policy transformed the company."
+  },
+  {
+    "id": "0017",
+    "word": "transmit",
+    "cn": "传播，播送；传递",
+    "example": "The radio transmits news every hour."
+  },
+  {
+    "id": "0018",
+    "word": "transplant",
+    "cn": "移植",
+    "example": "The surgeon transplanted the organ successfully."
+  },
+  {
+    "id": "0019",
+    "word": "transport",
+    "cn": "运输",
+    "example": "The goods were transported by truck."
+  },
+  {
+    "id": "0020",
+    "word": "shift",
+    "cn": "转移，转动，转变",
+    "example": "Public opinion began to shift."
+  },
+  {
+    "id": "0021",
+    "word": "vary",
+    "cn": "变化，改变；使多样化",
+    "example": "Prices vary from store to store."
+  },
+  {
+    "id": "0022",
+    "word": "vanish",
+    "cn": "消失，不见",
+    "example": "The sun vanished behind the clouds."
+  },
+  {
+    "id": "0023",
+    "word": "swallow",
+    "cn": "吞下，咽下 n. 燕子",
+    "example": "He swallowed the medicine quickly."
+  },
+  {
+    "id": "0024",
+    "word": "suspicion",
+    "cn": "怀疑，疑心",
+    "example": "She felt a strong suspicion about his behavior."
+  },
+  {
+    "id": "0025",
+    "word": "suspicious",
+    "cn": "怀疑的，可疑的",
+    "example": "He looked at me with a suspicious expression."
+  },
+  {
+    "id": "0026",
+    "word": "mild",
+    "cn": "温暖的，温和的；温柔的；味淡的",
+    "example": "She spoke in a mild voice."
+  },
+  {
+    "id": "0027",
+    "word": "tender",
+    "cn": "温柔的；脆弱的",
+    "example": "The meat is tender and easy to eat."
+  },
+  {
+    "id": "0028",
+    "word": "nuisance",
+    "cn": "损害，妨害，讨厌的人或事物",
+    "example": "The noise became a real nuisance."
+  },
+  {
+    "id": "0029",
+    "word": "insignificant",
+    "cn": "无意义的，无足轻重的",
+    "example": "The mistake was insignificant."
+  },
+  {
+    "id": "0030",
+    "word": "accelerate",
+    "cn": "加速，促进",
+    "example": "The car accelerated quickly."
+  },
+  {
+    "id": "0031",
+    "word": "absolute",
+    "cn": "绝对的，完全的",
+    "example": "He has absolute confidence in himself."
+  },
+  {
+    "id": "0032",
+    "word": "boundary",
+    "cn": "分界线，边界",
+    "example": "The river forms a natural boundary."
+  },
+  {
+    "id": "0033",
+    "word": "brake",
+    "cn": "刹车，制动器",
+    "example": "He pressed the brake suddenly."
+  },
+  {
+    "id": "0034",
+    "word": "catalog",
+    "cn": "目录（册）",
+    "example": "She looked up the book in the catalog."
+  },
+  {
+    "id": "0035",
+    "word": "vague",
+    "cn": "模糊的，不明确的",
+    "example": "His answer was vague."
+  },
+  {
+    "id": "0036",
+    "word": "vain",
+    "cn": "徒劳；白费",
+    "example": "He tried in vain to find his keys."
+  },
+  {
+    "id": "0037",
+    "word": "extinct",
+    "cn": "绝灭的，熄灭的",
+    "example": "Many animals have become extinct."
+  },
+  {
+    "id": "0038",
+    "word": "extraordinary",
+    "cn": "不平常的，特别的",
+    "example": "She showed extraordinary courage."
+  },
+  {
+    "id": "0039",
+    "word": "extreme",
+    "cn": "极度的，极端的 n. 极端",
+    "example": "They faced extreme difficulties."
+  },
+  {
+    "id": "0040",
+    "word": "agent",
+    "cn": "代理人，代理商",
+    "example": "He works as a travel agent."
+  },
+  {
+    "id": "0041",
+    "word": "alcohol",
+    "cn": "含酒精的饮料；酒精",
+    "example": "Drinking too much alcohol is harmful."
+  },
+  {
+    "id": "0042",
+    "word": "appeal",
+    "cn": "呼吁；恳求",
+    "example": "She appealed for help."
+  },
+  {
+    "id": "0043",
+    "word": "appreciate",
+    "cn": "重视；赏识；欣赏",
+    "example": "I appreciate your help."
+  },
+  {
+    "id": "0044",
+    "word": "approve",
+    "cn": "赞成，同意，批准",
+    "example": "The manager approved the plan."
+  },
+  {
+    "id": "0045",
+    "word": "stimulate",
+    "cn": "刺激，激励",
+    "example": "The new policy stimulated economic growth."
+  },
+  {
+    "id": "0046",
+    "word": "acquire",
+    "cn": "取得；获得；学到",
+    "example": "She acquired a lot of knowledge."
+  },
+  {
+    "id": "0047",
+    "word": "accomplish",
+    "cn": "完成；达到；实行",
+    "example": "He accomplished the task successfully."
+  },
+  {
+    "id": "0048",
+    "word": "network",
+    "cn": "网络；广播网",
+    "example": "Social media has created a global network."
+  },
+  {
+    "id": "0049",
+    "word": "tide",
+    "cn": "潮汐；潮流",
+    "example": "The tide is coming in."
+  },
+  {
+    "id": "0050",
+    "word": "tidy",
+    "cn": "整洁的，整齐的",
+    "example": "Her room is tidy."
+  },
+  {
+    "id": "0051",
+    "word": "trace",
+    "cn": "追踪；找到；n. 痕迹",
+    "example": "The police traced the missing boy."
+  },
+  {
+    "id": "0052",
+    "word": "torture",
+    "cn": "拷打；折磨",
+    "example": "He suffered torture during the war."
+  },
+  {
+    "id": "0053",
+    "word": "wander",
+    "cn": "漫游；闲逛",
+    "example": "He wandered around the city alone."
+  },
+  {
+    "id": "0054",
+    "word": "wax",
+    "cn": "蜡",
+    "example": "The candle was made of wax."
+  },
+  {
+    "id": "0055",
+    "word": "weave",
+    "cn": "织，编",
+    "example": "She weaves beautiful carpets."
+  },
+  {
+    "id": "0056",
+    "word": "preserve",
+    "cn": "保护；保存；保持",
+    "example": "We must preserve our cultural heritage."
+  },
+  {
+    "id": "0057",
+    "word": "abuse",
+    "cn": "滥用；虐待；谩骂",
+    "example": "He abused his power."
+  },
+  {
+    "id": "0058",
+    "word": "academic",
+    "cn": "学术的；高等院校的",
+    "example": "She published several academic papers."
+  },
+  {
+    "id": "0059",
+    "word": "academy",
+    "cn": "（高等）专科学校；学会",
+    "example": "He studies at a music academy."
+  },
+  {
+    "id": "0060",
+    "word": "battery",
+    "cn": "电池（组）",
+    "example": "The battery needs to be replaced."
+  },
+  {
+    "id": "0061",
+    "word": "barrier",
+    "cn": "障碍；栅栏",
+    "example": "Language can be a barrier to communication."
+  },
+  {
+    "id": "0062",
+    "word": "cargo",
+    "cn": "（船、飞机等装载的）货物",
+    "example": "The ship carried valuable cargo."
+  },
+  {
+    "id": "0063",
+    "word": "career",
+    "cn": "生涯；职业",
+    "example": "She has a successful career."
+  },
+  {
+    "id": "0064",
+    "word": "vessel",
+    "cn": "船舶；容器；器皿",
+    "example": "The vessel sailed across the ocean."
+  },
+  {
+    "id": "0065",
+    "word": "vertical",
+    "cn": "垂直的",
+    "example": "The line is perfectly vertical."
+  },
+  {
+    "id": "0066",
+    "word": "oblige",
+    "cn": "迫使；责成；使感激",
+    "example": "I am obliged to thank you for your help."
+  },
+  {
+    "id": "0067",
+    "word": "obscure",
+    "cn": "晦暗的；模糊的",
+    "example": "His meaning was obscure."
+  },
+  {
+    "id": "0068",
+    "word": "extent",
+    "cn": "程度；范围；大小；限度",
+    "example": "To some extent, I agree with you."
+  },
+  {
+    "id": "0069",
+    "word": "exterior",
+    "cn": "外部；外表；外部的",
+    "example": "The exterior of the house was painted white."
+  },
+  {
+    "id": "0070",
+    "word": "external",
+    "cn": "外部的；外面的",
+    "example": "External factors influenced the result."
+  },
+  {
+    "id": "0071",
+    "word": "petrol",
+    "cn": "汽油",
+    "example": "Petrol prices have increased recently."
+  },
+  {
+    "id": "0072",
+    "word": "petroleum",
+    "cn": "石油",
+    "example": "The country exports petroleum."
+  },
+  {
+    "id": "0073",
+    "word": "delay",
+    "cn": "推迟；延误",
+    "example": "The flight was delayed by bad weather."
+  },
+  {
+    "id": "0074",
+    "word": "decay",
+    "cn": "腐烂；衰败",
+    "example": "The old building began to decay."
+  },
+  {
+    "id": "0075",
+    "word": "decent",
+    "cn": "像样的；体面的",
+    "example": "Everyone deserves a decent life."
+  },
+  {
+    "id": "0076",
+    "word": "route",
+    "cn": "路；路线；航线",
+    "example": "This route is the shortest way home."
+  },
+  {
+    "id": "0077",
+    "word": "ruin",
+    "cn": "破坏；毁灭",
+    "example": "The storm ruined our plan."
+  },
+  {
+    "id": "0078",
+    "word": "sake",
+    "cn": "缘故；理由",
+    "example": "For the sake of safety, wear a helmet."
+  },
+  {
+    "id": "0079",
+    "word": "satellite",
+    "cn": "卫星",
+    "example": "The satellite was launched into space."
+  },
+  {
+    "id": "0080",
+    "word": "scale",
+    "cn": "大小；规模；等级",
+    "example": "The scale of the project is huge."
+  },
+  {
+    "id": "0081",
+    "word": "temple",
+    "cn": "庙宇",
+    "example": "The temple attracts many visitors."
+  },
+  {
+    "id": "0082",
+    "word": "tedious",
+    "cn": "乏味的；单调的",
+    "example": "The lecture was long and tedious."
+  },
+  {
+    "id": "0083",
+    "word": "tend",
+    "cn": "易于；趋向",
+    "example": "Prices tend to rise during holidays."
+  },
+  {
+    "id": "0084",
+    "word": "tendency",
+    "cn": "倾向；趋势",
+    "example": "There is a tendency for prices to increase."
+  },
+  {
+    "id": "0085",
+    "word": "ultimate",
+    "cn": "极端的；最终的",
+    "example": "Peace is our ultimate goal."
+  },
+  {
+    "id": "0086",
+    "word": "undergo",
+    "cn": "经历；遭受",
+    "example": "He underwent surgery last year."
+  },
+  {
+    "id": "0087",
+    "word": "abundant",
+    "cn": "丰富的；充裕的",
+    "example": "The region has abundant natural resources."
+  },
+  {
+    "id": "0088",
+    "word": "adopt",
+    "cn": "收养；采用",
+    "example": "The company adopted a new strategy."
+  },
+  {
+    "id": "0089",
+    "word": "adapt",
+    "cn": "适应；改写",
+    "example": "He adapted quickly to the new environment."
+  },
+  {
+    "id": "0090",
+    "word": "bachelor",
+    "cn": "学士；单身汉",
+    "example": "He remained a bachelor all his life."
+  },
+  {
+    "id": "0091",
+    "word": "casual",
+    "cn": "偶然的；临时的",
+    "example": "It was just a casual meeting."
+  },
+  {
+    "id": "0092",
+    "word": "trap",
+    "cn": "陷阱；设陷阱",
+    "example": "The hunter set a trap in the forest."
+  },
+  {
+    "id": "0093",
+    "word": "vacant",
+    "cn": "空的；未占用的",
+    "example": "The seat beside me was vacant."
+  },
+  {
+    "id": "0094",
+    "word": "vacuum",
+    "cn": "真空；空白",
+    "example": "The machine creates a vacuum."
+  },
+  {
+    "id": "0095",
+    "word": "oral",
+    "cn": "口头的；口述的",
+    "example": "She gave an oral presentation."
+  },
+  {
+    "id": "0096",
+    "word": "optics",
+    "cn": "光学",
+    "example": "He studies optics at the university."
+  },
+  {
+    "id": "0097",
+    "word": "organ",
+    "cn": "器官；风琴",
+    "example": "The heart is an important organ."
+  },
+  {
+    "id": "0098",
+    "word": "excess",
+    "cn": "过分；过量",
+    "example": "Eating in excess is harmful."
+  },
+  {
+    "id": "0099",
+    "word": "expel",
+    "cn": "驱逐；开除",
+    "example": "He was expelled from school."
+  },
+  {
+    "id": "0100",
+    "word": "expend",
+    "cn": "消费；花费",
+    "example": "He expended a lot of effort on the project."
+  },
+  {
+    "id": "0101",
+    "word": "expenditure",
+    "cn": "支出；费用",
+    "example": "Government expenditure increased last year."
+  },
+  {
+    "id": "0102",
+    "word": "expense",
+    "cn": "开销；费用",
+    "example": "He paid the travel expense himself."
+  },
+  {
+    "id": "0103",
+    "word": "expensive",
+    "cn": "花钱多的；昂贵的",
+    "example": "This watch is very expensive."
+  },
+  {
+    "id": "0104",
+    "word": "expand",
+    "cn": "扩大；扩张",
+    "example": "The company plans to expand its business."
+  },
+  {
+    "id": "0105",
+    "word": "expansion",
+    "cn": "扩大；扩充",
+    "example": "The expansion of the factory created more jobs."
+  },
+  {
+    "id": "0106",
+    "word": "private",
+    "cn": "私人的；个人的",
+    "example": "This is my private letter."
+  },
+  {
+    "id": "0107",
+    "word": "individual",
+    "cn": "个人的；个体",
+    "example": "Each individual has the right to speak."
+  },
+  {
+    "id": "0108",
+    "word": "personal",
+    "cn": "个人的；私人的",
+    "example": "Personal information should be protected."
+  },
+  {
+    "id": "0109",
+    "word": "personnel",
+    "cn": "（总称）人员",
+    "example": "The company employs trained personnel."
+  },
+  {
+    "id": "0110",
+    "word": "the",
+    "cn": "Pacific Ocean 太平洋",
+    "example": "The Pacific Ocean is the largest ocean in the world."
+  },
+  {
+    "id": "0111",
+    "word": "the",
+    "cn": "Atlantic Ocean 大西洋",
+    "example": "The Atlantic Ocean separates Europe from America."
+  },
+  {
+    "id": "0112",
+    "word": "the",
+    "cn": "Arctic Ocean 北冰洋",
+    "example": "The Arctic Ocean is covered with ice."
+  },
+  {
+    "id": "0113",
+    "word": "the",
+    "cn": "Antarctic Ocean 南冰洋",
+    "example": "The Antarctic Ocean is extremely cold."
+  },
+  {
+    "id": "0114",
+    "word": "grant",
+    "cn": "授予；同意",
+    "example": "The bank granted him a loan."
+  },
+  {
+    "id": "0115",
+    "word": "grand",
+    "cn": "宏伟的；重大的",
+    "example": "The palace looked grand."
+  },
+  {
+    "id": "0116",
+    "word": "invade",
+    "cn": "侵入；侵略",
+    "example": "The army invaded the country."
+  },
+  {
+    "id": "0117",
+    "word": "acid",
+    "cn": "酸；酸的",
+    "example": "The rain contained acid."
+  },
+  {
+    "id": "0118",
+    "word": "acknowledge",
+    "cn": "承认；致谢",
+    "example": "He acknowledged his mistake."
+  },
+  {
+    "id": "0119",
+    "word": "balcony",
+    "cn": "阳台",
+    "example": "She stood on the balcony."
+  },
+  {
+    "id": "0120",
+    "word": "calculate",
+    "cn": "计算",
+    "example": "He calculated the cost carefully."
+  },
+  {
+    "id": "0121",
+    "word": "calendar",
+    "cn": "日历",
+    "example": "The date is marked on the calendar."
+  },
+  {
+    "id": "0122",
+    "word": "optimistic",
+    "cn": "乐观的",
+    "example": "She is optimistic about the future."
+  },
+  {
+    "id": "0123",
+    "word": "optional",
+    "cn": "可以任选的，非强制的",
+    "example": "Attendance at the lecture is optional."
+  },
+  {
+    "id": "0124",
+    "word": "outstanding",
+    "cn": "杰出的，显著的",
+    "example": "She made outstanding contributions to science."
+  },
+  {
+    "id": "0125",
+    "word": "export",
+    "cn": "出口(物)；出口，输出",
+    "example": "The country exports cars to many nations."
+  },
+  {
+    "id": "0126",
+    "word": "import",
+    "cn": "进口(物)；进口，输入",
+    "example": "The country imports oil."
+  },
+  {
+    "id": "0127",
+    "word": "impose",
+    "cn": "把…加强(on)；采用；利用",
+    "example": "The government imposed a tax on imports."
+  },
+  {
+    "id": "0128",
+    "word": "religion",
+    "cn": "宗教，宗教信仰",
+    "example": "Freedom of religion is protected by law."
+  },
+  {
+    "id": "0129",
+    "word": "religious",
+    "cn": "宗教的",
+    "example": "He is a deeply religious person."
+  },
+  {
+    "id": "0130",
+    "word": "victim",
+    "cn": "牺牲品，受害者",
+    "example": "He became a victim of the accident."
+  },
+  {
+    "id": "0131",
+    "word": "video",
+    "cn": "电视，视频；电视的，录像的",
+    "example": "We watched a video last night."
+  },
+  {
+    "id": "0132",
+    "word": "videotape",
+    "cn": "录像磁带；把…录在录像带上",
+    "example": "The event was videotaped."
+  },
+  {
+    "id": "0133",
+    "word": "offend",
+    "cn": "冒犯，触犯",
+    "example": "His rude words offended her."
+  },
+  {
+    "id": "0134",
+    "word": "bother",
+    "cn": "打搅，麻烦",
+    "example": "Sorry to bother you."
+  },
+  {
+    "id": "0135",
+    "word": "interfere",
+    "cn": "干涉，干扰，妨碍",
+    "example": "Don’t interfere in other people’s affairs."
+  },
+  {
+    "id": "0136",
+    "word": "internal",
+    "cn": "内部的，国内的",
+    "example": "Internal factors influenced the result."
+  },
+  {
+    "id": "0137",
+    "word": "beforehand",
+    "cn": "预先，事先",
+    "example": "Please inform me beforehand."
+  },
+  {
+    "id": "0138",
+    "word": "racial",
+    "cn": "人种的种族的",
+    "example": "Racial discrimination is illegal."
+  },
+  {
+    "id": "0139",
+    "word": "radiation",
+    "cn": "放射物，辐射",
+    "example": "Radiation can damage human cells."
+  },
+  {
+    "id": "0140",
+    "word": "radical",
+    "cn": "根本的，激进的",
+    "example": "The reform brought radical changes."
+  },
+  {
+    "id": "0141",
+    "word": "range",
+    "cn": "幅度，范围；(在某范围内)变动",
+    "example": "Prices range from 10 to 100 dollars."
+  },
+  {
+    "id": "0142",
+    "word": "wonder",
+    "cn": "惊奇，奇迹；想知道，对…感到疑惑",
+    "example": "I wonder what happened."
+  },
+  {
+    "id": "0143",
+    "word": "isolate",
+    "cn": "隔离，使孤立",
+    "example": "The patient was isolated from others."
+  },
+  {
+    "id": "0144",
+    "word": "issue",
+    "cn": "问题，争论点；发行，（报刊）一期",
+    "example": "Environmental protection is an important issue."
+  },
+  {
+    "id": "0145",
+    "word": "hollow",
+    "cn": "空的，中空的，空虚的",
+    "example": "The tree trunk was hollow inside."
+  },
+  {
+    "id": "0146",
+    "word": "hook",
+    "cn": "钩；钩住",
+    "example": "Hang your coat on the hook."
+  },
+  {
+    "id": "0147",
+    "word": "adequate",
+    "cn": "适当的，足够",
+    "example": "The food supply is adequate."
+  },
+  {
+    "id": "0148",
+    "word": "adhere",
+    "cn": "粘附，附着；遵守，坚持",
+    "example": "He adhered to his promise."
+  },
+  {
+    "id": "0149",
+    "word": "ban",
+    "cn": "取缔，禁止",
+    "example": "Smoking is banned in public places."
+  },
+  {
+    "id": "0150",
+    "word": "capture",
+    "cn": "俘虏，捕获",
+    "example": "The police captured the thief."
+  },
+  {
+    "id": "0151",
+    "word": "valid",
+    "cn": "有效的，有根据的；正当的",
+    "example": "Your argument is valid."
+  },
+  {
+    "id": "0152",
+    "word": "valley",
+    "cn": "山谷，峡谷",
+    "example": "The village lies in a valley."
+  },
+  {
+    "id": "0153",
+    "word": "consistent",
+    "cn": "坚定；一致的，始终如一的",
+    "example": "His actions are consistent with his words."
+  },
+  {
+    "id": "0154",
+    "word": "continuous",
+    "cn": "继续的，连续(不断)的",
+    "example": "There was continuous rain for days."
+  },
+  {
+    "id": "0155",
+    "word": "continual",
+    "cn": "不断地，频繁的",
+    "example": "He made continual complaints."
+  },
+  {
+    "id": "0156",
+    "word": "explode",
+    "cn": "爆炸；爆发；激增",
+    "example": "The bomb exploded suddenly."
+  },
+  {
+    "id": "0157",
+    "word": "exploit",
+    "cn": "剥削；利用，开采",
+    "example": "We must not exploit natural resources carelessly."
+  },
+  {
+    "id": "0158",
+    "word": "explore",
+    "cn": "勘探",
+    "example": "Scientists explore outer space."
+  },
+  {
+    "id": "0159",
+    "word": "explosion",
+    "cn": "爆炸；爆发；激增",
+    "example": "The explosion destroyed the building."
+  },
+  {
+    "id": "0160",
+    "word": "explosive",
+    "cn": "爆炸的；极易引起争论的",
+    "example": "The situation became explosive."
+  },
+  {
+    "id": "0161",
+    "word": "remote",
+    "cn": "遥远的，偏僻的",
+    "example": "The village is in a remote area."
+  },
+  {
+    "id": "0162",
+    "word": "removal",
+    "cn": "除去，消除",
+    "example": "The removal of waste is necessary."
+  },
+  {
+    "id": "0163",
+    "word": "render",
+    "cn": "使得，致使",
+    "example": "The accident rendered him unconscious."
+  },
+  {
+    "id": "0164",
+    "word": "emphasize",
+    "cn": "强调，着重",
+    "example": "The teacher emphasized the importance of hard work."
+  },
+  {
+    "id": "0165",
+    "word": "emotion",
+    "cn": "情感，感情",
+    "example": "He could not control his emotion."
+  },
+  {
+    "id": "0166",
+    "word": "emotional",
+    "cn": "感情的，情绪(上)的",
+    "example": "She became emotional when talking about her mother."
+  },
+  {
+    "id": "0167",
+    "word": "awful",
+    "cn": "极坏的，威严的，可怕的",
+    "example": "The weather was awful yesterday."
+  },
+  {
+    "id": "0168",
+    "word": "awkward",
+    "cn": "笨拙的，棘手的",
+    "example": "He felt awkward at the party."
+  },
+  {
+    "id": "0169",
+    "word": "clue",
+    "cn": "线索，提示",
+    "example": "The police found an important clue."
+  },
+  {
+    "id": "0170",
+    "word": "collision",
+    "cn": "碰撞，冲突",
+    "example": "The cars were damaged in the collision."
+  },
+  {
+    "id": "0171",
+    "word": "device",
+    "cn": "装置，设备",
+    "example": "The device was invented last year."
+  },
+  {
+    "id": "0172",
+    "word": "devise",
+    "cn": "发明，策划，想出",
+    "example": "He devised a new plan."
+  },
+  {
+    "id": "0173",
+    "word": "inevitable",
+    "cn": "不可避免的",
+    "example": "Failure is inevitable in learning."
+  },
+  {
+    "id": "0174",
+    "word": "naval",
+    "cn": "海军的",
+    "example": "He joined the naval forces."
+  },
+  {
+    "id": "0175",
+    "word": "navigation",
+    "cn": "航行",
+    "example": "Navigation depends on accurate maps."
+  },
+  {
+    "id": "0176",
+    "word": "necessity",
+    "cn": "必需品，必要性",
+    "example": "Food is a basic necessity."
+  },
+  {
+    "id": "0177",
+    "word": "previous",
+    "cn": "先，前，以前的",
+    "example": "He referred to his previous experience."
+  },
+  {
+    "id": "0178",
+    "word": "provision",
+    "cn": "[pl.] 给养，口粮；准备，设备，装置",
+    "example": "The government made provisions for the poor."
+  },
+  {
+    "id": "0179",
+    "word": "pursue",
+    "cn": "追逐；追求；从事；进行",
+    "example": "He pursued his dream of becoming a doctor."
+  },
+  {
+    "id": "0180",
+    "word": "stale",
+    "cn": "不新鲜的，陈腐的",
+    "example": "The bread was stale."
+  },
+  {
+    "id": "0181",
+    "word": "substitute",
+    "cn": "代用品；代替",
+    "example": "Butter can be substituted for oil."
+  },
+  {
+    "id": "0182",
+    "word": "deserve",
+    "cn": "应受，应得，值得",
+    "example": "He deserves respect."
+  },
+  {
+    "id": "0183",
+    "word": "discrimination",
+    "cn": "歧视，辨别力",
+    "example": "Racial discrimination is illegal."
+  },
+  {
+    "id": "0184",
+    "word": "professional",
+    "cn": "职业的，专门的",
+    "example": "She gave a professional performance."
+  },
+  {
+    "id": "0185",
+    "word": "secure",
+    "cn": "安全的，可靠的",
+    "example": "The building is secure."
+  },
+  {
+    "id": "0186",
+    "word": "security",
+    "cn": "安全，保障",
+    "example": "The guards ensured the security of the building."
+  },
+  {
+    "id": "0187",
+    "word": "scratch",
+    "cn": "抓，抓，挠",
+    "example": "He scratched his head."
+  },
+  {
+    "id": "0188",
+    "word": "talent",
+    "cn": "才能，天资；人才",
+    "example": "She has great musical talent."
+  },
+  {
+    "id": "0189",
+    "word": "insurance",
+    "cn": "保险，保险费",
+    "example": "He bought health insurance."
+  },
+  {
+    "id": "0190",
+    "word": "insure",
+    "cn": "给…保险；保证，确保",
+    "example": "The company insured the goods."
+  },
+  {
+    "id": "0191",
+    "word": "nevertheless",
+    "cn": "仍然，然而，不过",
+    "example": "It was raining; nevertheless, he went out."
+  },
+  {
+    "id": "0192",
+    "word": "neutral",
+    "cn": "中立的，中性的",
+    "example": "The country remained neutral."
+  },
+  {
+    "id": "0193",
+    "word": "spot",
+    "cn": "地点，斑点；认出，发现；玷污",
+    "example": "I spotted him in the crowd."
+  },
+  {
+    "id": "0194",
+    "word": "spray",
+    "cn": "喷，（使）溅散",
+    "example": "He sprayed water on the flowers."
+  },
+  {
+    "id": "0195",
+    "word": "medium",
+    "cn": "中等的，适中的；媒介物，新闻媒介",
+    "example": "Television is a powerful medium."
+  },
+  {
+    "id": "0196",
+    "word": "media",
+    "cn": "新闻传媒",
+    "example": "The news was widely reported in the media."
+  },
+  {
+    "id": "0197",
+    "word": "auxiliary",
+    "cn": "辅助的，备用的",
+    "example": "The auxiliary engine was started."
+  },
+  {
+    "id": "0198",
+    "word": "automatic",
+    "cn": "自动的",
+    "example": "The door is automatic."
+  },
+  {
+    "id": "0199",
+    "word": "compete",
+    "cn": "竞争，比赛",
+    "example": "Companies compete for customers."
+  },
+  {
+    "id": "0200",
+    "word": "competent",
+    "cn": "有能力的，能胜任的",
+    "example": "He is competent for the job."
+  },
+  {
+    "id": "0201",
+    "word": "competition",
+    "cn": "竞争，比赛",
+    "example": "The competition was very intense."
+  },
+  {
+    "id": "0202",
+    "word": "distribute",
+    "cn": "分发，分配",
+    "example": "The teacher distributed the papers."
+  },
+  {
+    "id": "0203",
+    "word": "disturb",
+    "cn": "打搅，妨碍",
+    "example": "Sorry to disturb you."
+  },
+  {
+    "id": "0204",
+    "word": "infer",
+    "cn": "推论，推断",
+    "example": "We can infer the truth from the evidence."
+  },
+  {
+    "id": "0205",
+    "word": "integrate",
+    "cn": "(into, with) (使)成为一体，(使)合并",
+    "example": "The new students quickly integrated into the class."
+  },
+  {
+    "id": "0206",
+    "word": "moist",
+    "cn": "潮湿",
+    "example": "The air is moist after the rain."
+  },
+  {
+    "id": "0207",
+    "word": "moisture",
+    "cn": "潮湿",
+    "example": "The soil contains enough moisture."
+  },
+  {
+    "id": "0208",
+    "word": "promote",
+    "cn": "促进，提升",
+    "example": "The campaign promotes healthy living."
+  },
+  {
+    "id": "0209",
+    "word": "region",
+    "cn": "地区；范围；幅度",
+    "example": "This region is famous for its tea."
+  },
+  {
+    "id": "0210",
+    "word": "register",
+    "cn": "登记，注册",
+    "example": "You must register before the exam."
+  },
+  {
+    "id": "0211",
+    "word": "stable",
+    "cn": "稳定的",
+    "example": "The patient is now stable."
+  },
+  {
+    "id": "0212",
+    "word": "sophisticated",
+    "cn": "老于世故的，老练的；很复杂的",
+    "example": "The system is highly sophisticated."
+  },
+  {
+    "id": "0213",
+    "word": "splendid",
+    "cn": "极好的，壮丽的，辉煌的",
+    "example": "It was a splendid performance."
+  },
+  {
+    "id": "0214",
+    "word": "cancel",
+    "cn": "取消，废除",
+    "example": "They canceled the meeting."
+  },
+  {
+    "id": "0215",
+    "word": "variable",
+    "cn": "易变的，可变的",
+    "example": "The weather here is very variable."
+  },
+  {
+    "id": "0216",
+    "word": "prospect",
+    "cn": "前景，前途；景象",
+    "example": "The job offers good prospects."
+  },
+  {
+    "id": "0217",
+    "word": "prosperity",
+    "cn": "兴旺，繁荣",
+    "example": "Economic growth brings prosperity."
+  },
+  {
+    "id": "0218",
+    "word": "aspect",
+    "cn": "方面；朝向；面貌",
+    "example": "We discussed every aspect of the problem."
+  },
+  {
+    "id": "0219",
+    "word": "cope",
+    "cn": "(with) (成功地)应付，处理",
+    "example": "She can cope with stress well."
+  },
+  {
+    "id": "0220",
+    "word": "core",
+    "cn": "果心，核心",
+    "example": "Hard work is at the core of success."
+  },
+  {
+    "id": "0221",
+    "word": "maintain",
+    "cn": "维持，保持；坚持，主张",
+    "example": "He maintained his position."
+  },
+  {
+    "id": "0222",
+    "word": "mainland",
+    "cn": "大陆",
+    "example": "They traveled to the mainland."
+  },
+  {
+    "id": "0223",
+    "word": "discipline",
+    "cn": "纪律，惩罚，学科",
+    "example": "The school has strict discipline."
+  },
+  {
+    "id": "0224",
+    "word": "domestic",
+    "cn": "本国的，国内的；家用的；家庭的",
+    "example": "Domestic products are cheaper."
+  },
+  {
+    "id": "0225",
+    "word": "constant",
+    "cn": "不变的，恒定的；常数",
+    "example": "There was constant noise outside."
+  },
+  {
+    "id": "0226",
+    "word": "cliff",
+    "cn": "悬崖，峭壁",
+    "example": "He stood at the edge of the cliff."
+  },
+  {
+    "id": "0227",
+    "word": "authority",
+    "cn": "权威，当局",
+    "example": "The local authority made the decision."
+  },
+  {
+    "id": "0228",
+    "word": "audio",
+    "cn": "听觉",
+    "example": "The audio was not clear."
+  },
+  {
+    "id": "0229",
+    "word": "attitude",
+    "cn": "态度",
+    "example": "Her attitude has changed."
+  },
+  {
+    "id": "0230",
+    "word": "community",
+    "cn": "社区，社会",
+    "example": "The project benefits the community."
+  },
+  {
+    "id": "0231",
+    "word": "commit",
+    "cn": "犯(错误，罪行等)，干(坏事等)",
+    "example": "He committed a serious crime."
+  },
+  {
+    "id": "0232",
+    "word": "comment",
+    "cn": "评论",
+    "example": "He made no comment on the issue."
+  },
+  {
+    "id": "0233",
+    "word": "distinguish",
+    "cn": "区分，辨别",
+    "example": "Can you distinguish right from wrong?"
+  },
+  {
+    "id": "0234",
+    "word": "distress",
+    "cn": "痛苦，悲伤；使痛苦",
+    "example": "Failure caused him great distress."
+  },
+  {
+    "id": "0235",
+    "word": "facility",
+    "cn": "设备，设施；便利，方便",
+    "example": "The hotel offers excellent facilities."
+  },
+  {
+    "id": "0236",
+    "word": "faculty",
+    "cn": "能力，技能；系，学科，学院；全体教员",
+    "example": "He has a faculty for languages."
+  },
+  {
+    "id": "0237",
+    "word": "mixture",
+    "cn": "混合，混合物",
+    "example": "The drink is a mixture of juice and water."
+  },
+  {
+    "id": "0238",
+    "word": "mood",
+    "cn": "心情，情绪，语气",
+    "example": "His mood changed suddenly."
+  },
+  {
+    "id": "0239",
+    "word": "moral",
+    "cn": "道德上的，有道德的",
+    "example": "It is a moral duty to help others."
+  },
+  {
+    "id": "0240",
+    "word": "prominent",
+    "cn": "突出的",
+    "example": "He is a prominent leader."
+  },
+  {
+    "id": "0241",
+    "word": "substance",
+    "cn": "物质；实质",
+    "example": "The report lacks substance."
+  },
+  {
+    "id": "0242",
+    "word": "substantial",
+    "cn": "可观的，牛固的；牢固的；实质的",
+    "example": "He earned a substantial income."
+  },
+  {
+    "id": "0243",
+    "word": "prompt",
+    "cn": "促使；敏捷的，及时的",
+    "example": "She gave a prompt reply."
+  },
+  {
+    "id": "0244",
+    "word": "vivid",
+    "cn": "生动的",
+    "example": "He gave a vivid description."
+  },
+  {
+    "id": "0245",
+    "word": "vocabulary",
+    "cn": "词汇(量)；词汇表",
+    "example": "Reading improves your vocabulary."
+  },
+  {
+    "id": "0246",
+    "word": "venture",
+    "cn": "风险投资，风险项目；冒险，取于",
+    "example": "He ventured into the forest alone."
+  },
+  {
+    "id": "0247",
+    "word": "version",
+    "cn": "版本，译本；说法",
+    "example": "This is the latest version."
+  },
+  {
+    "id": "0248",
+    "word": "waist",
+    "cn": "腰，腰部",
+    "example": "She put her hands on her waist."
+  },
+  {
+    "id": "0249",
+    "word": "weld",
+    "cn": "焊接",
+    "example": "The metal parts were welded together."
+  },
+  {
+    "id": "0250",
+    "word": "yawn",
+    "cn": "打哈欠",
+    "example": "He yawned during the lecture."
+  },
+  {
+    "id": "0251",
+    "word": "yield",
+    "cn": "(to) 屈服于；让出，放弃；产量",
+    "example": "He refused to yield to pressure."
+  },
+  {
+    "id": "0252",
+    "word": "zone",
+    "cn": "地区，区域",
+    "example": "This area is a danger zone."
+  },
+  {
+    "id": "0253",
+    "word": "strategy",
+    "cn": "战略，策略",
+    "example": "We need a new strategy."
+  },
+  {
+    "id": "0254",
+    "word": "strategic",
+    "cn": "战略(上的)，关键的",
+    "example": "The bridge is of strategic importance."
+  },
+  {
+    "id": "0255",
+    "word": "tense",
+    "cn": "紧张的；拉紧；时态",
+    "example": "He felt tense before the exam."
+  },
+  {
+    "id": "0256",
+    "word": "tension",
+    "cn": "紧张(状态)，张力",
+    "example": "There was great tension in the room."
+  },
+  {
+    "id": "0257",
+    "word": "avenue",
+    "cn": "林荫道，大街",
+    "example": "We walked along the avenue."
+  },
+  {
+    "id": "0258",
+    "word": "available",
+    "cn": "现成可用的；可得到的",
+    "example": "Tickets are available online."
+  },
+  {
+    "id": "0259",
+    "word": "comparable",
+    "cn": "(with, to) 可比较的，类似的",
+    "example": "This product is comparable to that one."
+  },
+  {
+    "id": "0260",
+    "word": "comparative",
+    "cn": "比较的，相对的",
+    "example": "She made a comparative study."
+  },
+  {
+    "id": "0261",
+    "word": "dash",
+    "cn": "猛冲，飞奔",
+    "example": "He dashed out of the room."
+  },
+  {
+    "id": "0262",
+    "word": "data",
+    "cn": "数据，资料",
+    "example": "The data were carefully analyzed."
+  },
+  {
+    "id": "0263",
+    "word": "dive",
+    "cn": "跳水，潜水",
+    "example": "He dived into the river."
+  },
+  {
+    "id": "0264",
+    "word": "diverse",
+    "cn": "不同的，多种多样的",
+    "example": "The city has a diverse population."
+  },
+  {
+    "id": "0265",
+    "word": "entitle",
+    "cn": "给…权利，给…资格",
+    "example": "The ticket entitles you to free entry."
+  },
+  {
+    "id": "0266",
+    "word": "regulate",
+    "cn": "管理，调节",
+    "example": "The government regulates prices."
+  },
+  {
+    "id": "0267",
+    "word": "release",
+    "cn": "释放，排放；解释解脱",
+    "example": "The prisoner was released."
+  },
+  {
+    "id": "0268",
+    "word": "exaggerate",
+    "cn": "夸大，夸张",
+    "example": "Don't exaggerate the problem."
+  },
+  {
+    "id": "0269",
+    "word": "evil",
+    "cn": "邪恶的，坏的",
+    "example": "He was an evil man."
+  },
+  {
+    "id": "0270",
+    "word": "shrink",
+    "cn": "起皱，收缩；退缩",
+    "example": "The sweater shrank in the wash."
+  },
+  {
+    "id": "0271",
+    "word": "subtract",
+    "cn": "减(去)",
+    "example": "Subtract five from ten."
+  },
+  {
+    "id": "0272",
+    "word": "suburb",
+    "cn": "市郊",
+    "example": "He lives in the suburbs."
+  },
+  {
+    "id": "0273",
+    "word": "subway",
+    "cn": "地铁",
+    "example": "She took the subway to work."
+  },
+  {
+    "id": "0274",
+    "word": "survey",
+    "cn": "调查，勘测",
+    "example": "The survey showed positive results."
+  },
+  {
+    "id": "0275",
+    "word": "wealthy",
+    "cn": "富裕的，富裕",
+    "example": "He comes from a wealthy family."
+  },
+  {
+    "id": "0276",
+    "word": "adjust",
+    "cn": "调整，调节",
+    "example": "He adjusted to the new environment."
+  },
+  {
+    "id": "0277",
+    "word": "attach",
+    "cn": "系，贴；使附属",
+    "example": "Please attach the file to the email."
+  },
+  {
+    "id": "0278",
+    "word": "profit",
+    "cn": "利润，益处；有益于，有利于",
+    "example": "The company made a profit."
+  },
+  {
+    "id": "0279",
+    "word": "profitable",
+    "cn": "有利可图的",
+    "example": "It is a profitable business."
+  },
+  {
+    "id": "0280",
+    "word": "slope",
+    "cn": "斜坡，斜面",
+    "example": "The house stands on a slope."
+  },
+  {
+    "id": "0281",
+    "word": "reinforce",
+    "cn": "增强，加强",
+    "example": "The troops were reinforced."
+  },
+  {
+    "id": "0282",
+    "word": "reject",
+    "cn": "拒绝",
+    "example": "He rejected the offer."
+  },
+  {
+    "id": "0283",
+    "word": "fatal",
+    "cn": "致命的，重大的",
+    "example": "The accident proved fatal."
+  },
+  {
+    "id": "0284",
+    "word": "fate",
+    "cn": "命运",
+    "example": "He believed in fate."
+  },
+  {
+    "id": "0285",
+    "word": "humble",
+    "cn": "谦逊的，谦虚的",
+    "example": "He remained humble."
+  },
+  {
+    "id": "0286",
+    "word": "illegal",
+    "cn": "不合法的，非法的",
+    "example": "It is illegal to park here."
+  },
+  {
+    "id": "0287",
+    "word": "award",
+    "cn": "授予，判给；奖品，奖金",
+    "example": "She was awarded a prize."
+  },
+  {
+    "id": "0288",
+    "word": "aware",
+    "cn": "意识到",
+    "example": "I was aware of the danger."
+  },
+  {
+    "id": "0289",
+    "word": "column",
+    "cn": "柱，圆柱；栏，专栏",
+    "example": "He writes a column for the newspaper."
+  },
+  {
+    "id": "0290",
+    "word": "comedy",
+    "cn": "喜剧",
+    "example": "We watched a comedy last night."
+  },
+  {
+    "id": "0291",
+    "word": "dumb",
+    "cn": "哑的，沉默的",
+    "example": "He remained dumb during the discussion."
+  },
+  {
+    "id": "0292",
+    "word": "dump",
+    "cn": "倾倒，倾卸",
+    "example": "The factory dumped waste into the river."
+  },
+  {
+    "id": "0293",
+    "word": "deaf",
+    "cn": "聋的；不愿听的",
+    "example": "He is deaf in one ear."
+  },
+  {
+    "id": "0294",
+    "word": "decorate",
+    "cn": "装饰，装填",
+    "example": "The room was decorated with flowers."
+  },
+  {
+    "id": "0295",
+    "word": "principal",
+    "cn": "最重要的；负责人，校长",
+    "example": "The principal addressed the students."
+  },
+  {
+    "id": "0296",
+    "word": "principle",
+    "cn": "原则，原理",
+    "example": "He sticks to his principles."
+  },
+  {
+    "id": "0297",
+    "word": "prior",
+    "cn": "优先的，在前的",
+    "example": "Prior experience is required."
+  },
+  {
+    "id": "0298",
+    "word": "priority",
+    "cn": "优先，重点",
+    "example": "Safety is our top priority."
+  },
+  {
+    "id": "0299",
+    "word": "prohibit",
+    "cn": "禁止，不准",
+    "example": "Smoking is prohibited here."
+  },
+  {
+    "id": "0300",
+    "word": "remarkable",
+    "cn": "值得注意的，异常的，非凡的",
+    "example": "She made remarkable progress."
+  },
+  {
+    "id": "0301",
+    "word": "remedy",
+    "cn": "补救，医治，治疗",
+    "example": "There is no remedy for this disease."
+  },
+  {
+    "id": "0302",
+    "word": "repetition",
+    "cn": "重复，反复",
+    "example": "Repetition helps memory."
+  },
+  {
+    "id": "0303",
+    "word": "vain",
+    "cn": "徒劳的，无效的",
+    "example": "He attempted to climb the cliff in vain."
+  },
+  {
+    "id": "0304",
+    "word": "undertake",
+    "cn": "承担，着手做；同意，答应",
+    "example": "He undertook the task."
+  },
+  {
+    "id": "0305",
+    "word": "unique",
+    "cn": "唯一的，独特的",
+    "example": "Each person has a unique style."
+  },
+  {
+    "id": "0306",
+    "word": "obstacle",
+    "cn": "障碍(物)，妨碍",
+    "example": "Lack of money is a major obstacle."
+  },
+  {
+    "id": "0307",
+    "word": "odd",
+    "cn": "奇特的，古怪的；奇数的",
+    "example": "He wore odd shoes."
+  },
+  {
+    "id": "0308",
+    "word": "omit",
+    "cn": "省略",
+    "example": "He omitted an important detail."
+  },
+  {
+    "id": "0309",
+    "word": "opponent",
+    "cn": "敌手，对手",
+    "example": "He defeated his opponent."
+  },
+  {
+    "id": "0310",
+    "word": "opportunity",
+    "cn": "机会，时机",
+    "example": "He seized the opportunity."
+  },
+  {
+    "id": "0311",
+    "word": "orchestra",
+    "cn": "管弦乐队",
+    "example": "The orchestra performed beautifully."
+  },
+  {
+    "id": "0312",
+    "word": "semester",
+    "cn": "学期，半年",
+    "example": "The semester begins in September."
+  },
+  {
+    "id": "0313",
+    "word": "semiconductor",
+    "cn": "半导体",
+    "example": "Silicon is used as a semiconductor."
+  },
+  {
+    "id": "0314",
+    "word": "seminar",
+    "cn": "研讨会",
+    "example": "She attended an academic seminar."
+  },
+  {
+    "id": "0315",
+    "word": "terminal",
+    "cn": "末端的，极限的；终点",
+    "example": "The bus reached the terminal."
+  },
+  {
+    "id": "0316",
+    "word": "territory",
+    "cn": "领土",
+    "example": "The country defended its territory."
+  },
+  {
+    "id": "0317",
+    "word": "approximate",
+    "cn": "大概的，大约；近似",
+    "example": "The approximate cost is 100 dollars."
+  },
+  {
+    "id": "0318",
+    "word": "arbitrary",
+    "cn": "随意的，未断的",
+    "example": "The decision seemed arbitrary."
+  },
+  {
+    "id": "0319",
+    "word": "architect",
+    "cn": "建筑师",
+    "example": "The architect designed the building."
+  },
+  {
+    "id": "0320",
+    "word": "architecture",
+    "cn": "建筑学",
+    "example": "She studies architecture at university."
+  },
+  {
+    "id": "0321",
+    "word": "biology",
+    "cn": "生物学",
+    "example": "Biology is her favorite subject."
+  },
+  {
+    "id": "0322",
+    "word": "geography",
+    "cn": "地理(学)",
+    "example": "Geography helps us understand the world."
+  },
+  {
+    "id": "0323",
+    "word": "geology",
+    "cn": "地质学",
+    "example": "He majored in geology."
+  },
+  {
+    "id": "0324",
+    "word": "geometry",
+    "cn": "几何(学)",
+    "example": "Geometry requires logical thinking."
+  },
+  {
+    "id": "0325",
+    "word": "arithmetic",
+    "cn": "算术",
+    "example": "He is good at arithmetic."
+  },
+  {
+    "id": "0326",
+    "word": "algebra",
+    "cn": "代数",
+    "example": "Algebra is difficult for beginners."
+  },
+  {
+    "id": "0327",
+    "word": "entertainment",
+    "cn": "娱乐；招待，款待",
+    "example": "Television provides entertainment."
+  },
+  {
+    "id": "0328",
+    "word": "enthusiasm",
+    "cn": "热情，热心",
+    "example": "He showed great enthusiasm."
+  },
+  {
+    "id": "0329",
+    "word": "entry",
+    "cn": "进入，入口处；参赛的人(或物)",
+    "example": "The entry is free."
+  },
+  {
+    "id": "0330",
+    "word": "environment",
+    "cn": "环境",
+    "example": "We must protect the environment."
+  },
+  {
+    "id": "0331",
+    "word": "episode",
+    "cn": "插曲，片段",
+    "example": "This episode was interesting."
+  },
+  {
+    "id": "0332",
+    "word": "equation",
+    "cn": "方程(式)",
+    "example": "Solve the equation carefully."
+  },
+  {
+    "id": "0333",
+    "word": "restrain",
+    "cn": "阻止，抑制",
+    "example": "He restrained his anger."
+  },
+  {
+    "id": "0334",
+    "word": "restraint",
+    "cn": "抑制，限制",
+    "example": "She showed great self-restraint."
+  },
+  {
+    "id": "0335",
+    "word": "resume",
+    "cn": "(中断后)重新开始",
+    "example": "The meeting resumed after lunch."
+  },
+  {
+    "id": "0336",
+    "word": "severe",
+    "cn": "严重的",
+    "example": "He suffered severe injuries."
+  },
+  {
+    "id": "0337",
+    "word": "sexual",
+    "cn": "性的",
+    "example": "Sexual discrimination is illegal."
+  },
+  {
+    "id": "0338",
+    "word": "simplicity",
+    "cn": "简单，朴素",
+    "example": "We admire the simplicity of her life."
+  },
+  {
+    "id": "0339",
+    "word": "simplify",
+    "cn": "简化",
+    "example": "The teacher simplified the problem."
+  },
+  {
+    "id": "0340",
+    "word": "sorrow",
+    "cn": "悲哀，悲痛",
+    "example": "He was filled with sorrow."
+  },
+  {
+    "id": "0341",
+    "word": "stuff",
+    "cn": "原料，材料；填进，塞满",
+    "example": "The bag was stuffed with books."
+  },
+  {
+    "id": "0342",
+    "word": "temporary",
+    "cn": "暂时的，临时的",
+    "example": "He found a temporary job."
+  },
+  {
+    "id": "0343",
+    "word": "temptation",
+    "cn": "诱惑，引诱",
+    "example": "He resisted the temptation."
+  },
+  {
+    "id": "0344",
+    "word": "terror",
+    "cn": "恐怖",
+    "example": "The news filled them with terror."
+  },
+  {
+    "id": "0345",
+    "word": "thrust",
+    "cn": "插，推，塞",
+    "example": "He thrust the key into the lock."
+  },
+  {
+    "id": "0346",
+    "word": "treaty",
+    "cn": "条约，协定",
+    "example": "The two countries signed a treaty."
+  },
+  {
+    "id": "0347",
+    "word": "arise",
+    "cn": "产生，出现，发生；起身",
+    "example": "Problems may arise at any time."
+  },
+  {
+    "id": "0348",
+    "word": "arouse",
+    "cn": "引起，激起，唤醒",
+    "example": "The speech aroused public interest."
+  },
+  {
+    "id": "0349",
+    "word": "burden",
+    "cn": "重担，负荷",
+    "example": "The heavy debt became a burden."
+  },
+  {
+    "id": "0350",
+    "word": "bureau",
+    "cn": "局，办事处",
+    "example": "He works in a government bureau."
+  },
+  {
+    "id": "0351",
+    "word": "marvelous",
+    "cn": "奇迹般的，惊人的",
+    "example": "She did a marvelous job."
+  },
+  {
+    "id": "0352",
+    "word": "massive",
+    "cn": "大的，大量的，大块的",
+    "example": "The project requires massive investment."
+  },
+  {
+    "id": "0353",
+    "word": "mature",
+    "cn": "成熟的",
+    "example": "She is mature for her age."
+  },
+  {
+    "id": "0354",
+    "word": "maximum",
+    "cn": "最高的，最大的",
+    "example": "The maximum speed is 120 km per hour."
+  },
+  {
+    "id": "0355",
+    "word": "minimum",
+    "cn": "最低的，最小的",
+    "example": "The minimum age is 18."
+  },
+  {
+    "id": "0356",
+    "word": "nonsense",
+    "cn": "胡说，冒失的行为",
+    "example": "What he said is nonsense."
+  },
+  {
+    "id": "0357",
+    "word": "nuclear",
+    "cn": "核子的，核能的",
+    "example": "Nuclear energy is widely used."
+  },
+  {
+    "id": "0358",
+    "word": "nucleus",
+    "cn": "核",
+    "example": "The nucleus is the center of a cell."
+  },
+  {
+    "id": "0359",
+    "word": "retail",
+    "cn": "零售",
+    "example": "The goods are sold at retail."
+  },
+  {
+    "id": "0360",
+    "word": "retain",
+    "cn": "保留，保持",
+    "example": "He retained his calmness."
+  },
+  {
+    "id": "0361",
+    "word": "restrict",
+    "cn": "限制，约束",
+    "example": "The speed is restricted to 60 km per hour."
+  },
+  {
+    "id": "0362",
+    "word": "sponsor",
+    "cn": "发起者，主办者；发起，主办，资助",
+    "example": "The company sponsored the event."
+  },
+  {
+    "id": "0363",
+    "word": "spur",
+    "cn": "刺激，激励",
+    "example": "His failure was a spur to improvement."
+  },
+  {
+    "id": "0364",
+    "word": "triumph",
+    "cn": "胜利，成功",
+    "example": "The team celebrated their triumph."
+  },
+  {
+    "id": "0365",
+    "word": "tuition",
+    "cn": "学费",
+    "example": "He cannot afford the tuition."
+  },
+  {
+    "id": "0366",
+    "word": "twist",
+    "cn": "使缠绕，转动，扭歪",
+    "example": "He twisted the handle."
+  },
+  {
+    "id": "0367",
+    "word": "undergraduate",
+    "cn": "大学肄业生",
+    "example": "He is an undergraduate."
+  },
+  {
+    "id": "0368",
+    "word": "universal",
+    "cn": "普遍的，通用的，宇宙的",
+    "example": "This is a universal truth."
+  },
+  {
+    "id": "0369",
+    "word": "universe",
+    "cn": "宇宙",
+    "example": "The universe is vast."
+  },
+  {
+    "id": "0370",
+    "word": "via",
+    "cn": "经由，通过",
+    "example": "He sent the letter via email."
+  },
+  {
+    "id": "0371",
+    "word": "vibrate",
+    "cn": "振动，摇摆",
+    "example": "The machine vibrated violently."
+  },
+  {
+    "id": "0372",
+    "word": "virus",
+    "cn": "病毒",
+    "example": "The virus spreads quickly."
+  },
+  {
+    "id": "0373",
+    "word": "voluntary",
+    "cn": "自愿的",
+    "example": "Participation is voluntary."
+  },
+  {
+    "id": "0374",
+    "word": "volunteer",
+    "cn": "志愿者；自愿(做)",
+    "example": "She volunteered to help."
+  },
+  {
+    "id": "0375",
+    "word": "vote",
+    "cn": "选举；选票",
+    "example": "He voted for the proposal."
+  },
+  {
+    "id": "0376",
+    "word": "wagon",
+    "cn": "四轮马车，铁路货车",
+    "example": "The wagon was loaded with goods."
+  },
+  {
+    "id": "0377",
+    "word": "appoint",
+    "cn": "任命，委派",
+    "example": "He was appointed manager."
+  },
+  {
+    "id": "0378",
+    "word": "approach",
+    "cn": "靠近，接近；途径，方式",
+    "example": "He approached the problem carefully."
+  },
+  {
+    "id": "0379",
+    "word": "appropriate",
+    "cn": "适当的",
+    "example": "His behavior was appropriate."
+  },
+  {
+    "id": "0380",
+    "word": "bunch",
+    "cn": "群，伙，束，串",
+    "example": "She bought a bunch of flowers."
+  },
+  {
+    "id": "0381",
+    "word": "bundle",
+    "cn": "捆，包，束；收集，归拢",
+    "example": "He carried a bundle of newspapers."
+  },
+  {
+    "id": "0382",
+    "word": "ceremony",
+    "cn": "典礼，仪式",
+    "example": "The ceremony was held yesterday."
+  },
+  {
+    "id": "0383",
+    "word": "chaos",
+    "cn": "混乱，紊乱",
+    "example": "The country was thrown into chaos."
+  },
+  {
+    "id": "0384",
+    "word": "discount",
+    "cn": "(价格)折扣",
+    "example": "The store offered a discount."
+  },
+  {
+    "id": "0385",
+    "word": "display",
+    "cn": "陈列，展览",
+    "example": "The products are displayed in the window."
+  },
+  {
+    "id": "0386",
+    "word": "equivalent",
+    "cn": "相等的，相等物",
+    "example": "One dollar is equivalent to seven yuan."
+  },
+  {
+    "id": "0387",
+    "word": "erect",
+    "cn": "竖直的；建造，竖立",
+    "example": "They erected a monument."
+  },
+  {
+    "id": "0388",
+    "word": "fax",
+    "cn": "传真",
+    "example": "Please fax the document."
+  },
+  {
+    "id": "0389",
+    "word": "fertile",
+    "cn": "肥沃的，多产的",
+    "example": "The soil here is fertile."
+  },
+  {
+    "id": "0390",
+    "word": "fertilizer",
+    "cn": "肥料",
+    "example": "Farmers use fertilizer to increase crops."
+  },
+  {
+    "id": "0391",
+    "word": "grateful",
+    "cn": "感激的",
+    "example": "I am grateful for your help."
+  },
+  {
+    "id": "0392",
+    "word": "gratitude",
+    "cn": "感激",
+    "example": "She expressed her gratitude."
+  },
+  {
+    "id": "0393",
+    "word": "horror",
+    "cn": "恐怖",
+    "example": "The news filled him with horror."
+  },
+  {
+    "id": "0394",
+    "word": "horrible",
+    "cn": "可怕的",
+    "example": "It was a horrible accident."
+  },
+  {
+    "id": "0395",
+    "word": "Internet",
+    "cn": "国际互联网，因特网",
+    "example": "The Internet has changed our lives."
+  },
+  {
+    "id": "0396",
+    "word": "interpret",
+    "cn": "翻译，解释",
+    "example": "He interpreted the speech."
+  },
+  {
+    "id": "0397",
+    "word": "interpretation",
+    "cn": "解释，说明",
+    "example": "His interpretation was correct."
+  },
+  {
+    "id": "0398",
+    "word": "jungle",
+    "cn": "丛林，密林",
+    "example": "They got lost in the jungle."
+  },
+  {
+    "id": "0399",
+    "word": "knot",
+    "cn": "结；把…打成结",
+    "example": "Tie the rope in a knot."
+  },
+  {
+    "id": "0400",
+    "word": "leak",
+    "cn": "漏，渗漏",
+    "example": "The roof leaks when it rains."
+  },
+  {
+    "id": "0401",
+    "word": "lean",
+    "cn": "倾斜，倚，靠",
+    "example": "He leaned against the wall."
+  },
+  {
+    "id": "0402",
+    "word": "leap",
+    "cn": "跳跃",
+    "example": "The cat leaped onto the table."
+  },
+  {
+    "id": "0403",
+    "word": "modify",
+    "cn": "修改",
+    "example": "He modified the plan."
+  },
+  {
+    "id": "0404",
+    "word": "nylon",
+    "cn": "尼龙",
+    "example": "The shirt is made of nylon."
+  },
+  {
+    "id": "0405",
+    "word": "onion",
+    "cn": "洋葱",
+    "example": "She chopped the onion."
+  },
+  {
+    "id": "0406",
+    "word": "powder",
+    "cn": "粉末",
+    "example": "The medicine is in powder form."
+  },
+  {
+    "id": "0407",
+    "word": "applicable",
+    "cn": "可应用的，适当的",
+    "example": "The rule is applicable here."
+  },
+  {
+    "id": "0408",
+    "word": "applicant",
+    "cn": "申请人",
+    "example": "There were many applicants."
+  },
+  {
+    "id": "0409",
+    "word": "breadth",
+    "cn": "宽度",
+    "example": "The breadth of the river is 50 meters."
+  },
+  {
+    "id": "0410",
+    "word": "conservation",
+    "cn": "保存，保护",
+    "example": "Conservation of wildlife is important."
+  },
+  {
+    "id": "0411",
+    "word": "conservative",
+    "cn": "保守的",
+    "example": "He holds conservative views."
+  },
+  {
+    "id": "0412",
+    "word": "parallel",
+    "cn": "平行线；可相比拟的事物",
+    "example": "The two lines are parallel."
+  },
+  {
+    "id": "0413",
+    "word": "passion",
+    "cn": "激情，热情",
+    "example": "He has a passion for music."
+  },
+  {
+    "id": "0414",
+    "word": "passive",
+    "cn": "被动的，消极的",
+    "example": "He played a passive role."
+  },
+  {
+    "id": "0415",
+    "word": "pat",
+    "cn": "轻拍，轻打",
+    "example": "She patted the child gently."
+  },
+  {
+    "id": "0416",
+    "word": "peak",
+    "cn": "山峰，顶点",
+    "example": "He reached the peak of his career."
+  },
+  {
+    "id": "0417",
+    "word": "phenomenon",
+    "cn": "现象",
+    "example": "This is a common phenomenon."
+  },
+  {
+    "id": "0418",
+    "word": "reluctant",
+    "cn": "不情愿的，勉强的",
+    "example": "He was reluctant to leave."
+  },
+  {
+    "id": "0419",
+    "word": "rely",
+    "cn": "(on, upon) 依赖，指望",
+    "example": "You can rely on him."
+  },
+  {
+    "id": "0420",
+    "word": "relevant",
+    "cn": "有关的，切题的",
+    "example": "His answer is relevant."
+  },
+  {
+    "id": "0421",
+    "word": "reliable",
+    "cn": "可靠的",
+    "example": "He is a reliable person."
+  },
+  {
+    "id": "0422",
+    "word": "relief",
+    "cn": "轻松，宽慰；减轻",
+    "example": "She sighed with relief."
+  },
+  {
+    "id": "0423",
+    "word": "reputation",
+    "cn": "名气，声誉",
+    "example": "He has a good reputation."
+  },
+  {
+    "id": "0424",
+    "word": "rescue",
+    "cn": "营救",
+    "example": "The firefighters rescued the child."
+  },
+  {
+    "id": "0425",
+    "word": "triangle",
+    "cn": "三角(形)",
+    "example": "Draw a triangle."
+  },
+  {
+    "id": "0426",
+    "word": "sequence",
+    "cn": "连续，顺序",
+    "example": "The events happened in sequence."
+  },
+  {
+    "id": "0427",
+    "word": "shallow",
+    "cn": "浅的",
+    "example": "The water is shallow."
+  },
+  {
+    "id": "0428",
+    "word": "shiver",
+    "cn": "发抖",
+    "example": "He shivered in the cold."
+  },
+  {
+    "id": "0429",
+    "word": "shrug",
+    "cn": "耸肩",
+    "example": "He shrugged his shoulders."
+  },
+  {
+    "id": "0430",
+    "word": "signature",
+    "cn": "签名",
+    "example": "Please sign your signature."
+  },
+  {
+    "id": "0431",
+    "word": "sincere",
+    "cn": "诚挚的，真诚的",
+    "example": "He made a sincere apology."
+  },
+  {
+    "id": "0432",
+    "word": "utility",
+    "cn": "功用，效用",
+    "example": "The utility of this method is clear."
+  },
+  {
+    "id": "0433",
+    "word": "utilize",
+    "cn": "利用",
+    "example": "We should utilize resources wisely."
+  },
+  {
+    "id": "0434",
+    "word": "utter",
+    "cn": "说出；完全的，彻底的",
+    "example": "He uttered a cry of surprise."
+  },
+  {
+    "id": "0435",
+    "word": "variation",
+    "cn": "变化，变动",
+    "example": "There is little variation in price."
+  },
+  {
+    "id": "0436",
+    "word": "vehicle",
+    "cn": "交通工具，车辆",
+    "example": "The vehicle was badly damaged."
+  },
+  {
+    "id": "0437",
+    "word": "applause",
+    "cn": "鼓掌，掌声",
+    "example": "The performance received warm applause."
+  },
+  {
+    "id": "0438",
+    "word": "appliance",
+    "cn": "器具，器械",
+    "example": "Electrical appliances are expensive."
+  },
+  {
+    "id": "0439",
+    "word": "consent",
+    "cn": "准许，同意",
+    "example": "She consented to the plan."
+  },
+  {
+    "id": "0440",
+    "word": "conquer",
+    "cn": "征服",
+    "example": "He conquered his fear."
+  },
+  {
+    "id": "0441",
+    "word": "defect",
+    "cn": "缺点，缺陷",
+    "example": "The product has a slight defect."
+  },
+  {
+    "id": "0442",
+    "word": "delicate",
+    "cn": "易碎的；娇弱的；精美的",
+    "example": "The glass is delicate."
+  },
+  {
+    "id": "0443",
+    "word": "evolve",
+    "cn": "演变",
+    "example": "Society evolves over time."
+  },
+  {
+    "id": "0444",
+    "word": "evolution",
+    "cn": "演变，进化",
+    "example": "The theory of evolution is accepted."
+  },
+  {
+    "id": "0445",
+    "word": "frown",
+    "cn": "皱眉",
+    "example": "She frowned at the suggestion."
+  },
+  {
+    "id": "0446",
+    "word": "frustrate",
+    "cn": "使沮丧",
+    "example": "The delay frustrated him."
+  },
+  {
+    "id": "0447",
+    "word": "guarantee",
+    "cn": "保证",
+    "example": "The product is guaranteed for one year."
+  },
+  {
+    "id": "0448",
+    "word": "guilty",
+    "cn": "内疚的；有罪的",
+    "example": "He felt guilty."
+  },
+  {
+    "id": "0449",
+    "word": "jealous",
+    "cn": "妒忌的",
+    "example": "She was jealous of her friend."
+  },
+  {
+    "id": "0450",
+    "word": "jeans",
+    "cn": "牛仔裤",
+    "example": "He bought a pair of jeans."
+  },
+  {
+    "id": "0451",
+    "word": "liquor",
+    "cn": "酒，烈性酒",
+    "example": "He drank too much liquor."
+  },
+  {
+    "id": "0452",
+    "word": "litre",
+    "cn": "升",
+    "example": "A litre of water weighs one kilogram."
+  },
+  {
+    "id": "0453",
+    "word": "moderate",
+    "cn": "适度的",
+    "example": "He made moderate progress."
+  },
+  {
+    "id": "0454",
+    "word": "molecule",
+    "cn": "分子",
+    "example": "A molecule is made up of atoms."
+  },
+  {
+    "id": "0455",
+    "word": "orbit",
+    "cn": "轨道；(绕…)作轨道运行",
+    "example": "The moon orbits the earth."
+  },
+  {
+    "id": "0456",
+    "word": "participate",
+    "cn": "(in) 参与，参加",
+    "example": "She participated in the competition."
+  },
+  {
+    "id": "0457",
+    "word": "particle",
+    "cn": "微粒",
+    "example": "Dust particles filled the air."
+  },
+  {
+    "id": "0458",
+    "word": "particularly",
+    "cn": "特别，尤其",
+    "example": "I particularly like this book."
+  },
+  {
+    "id": "0459",
+    "word": "respond",
+    "cn": "回答，答复；反应",
+    "example": "He responded quickly."
+  },
+  {
+    "id": "0460",
+    "word": "response",
+    "cn": "回答，答复；反应",
+    "example": "She gave no response."
+  },
+  {
+    "id": "0461",
+    "word": "sensible",
+    "cn": "明智的",
+    "example": "It is sensible to save money."
+  },
+  {
+    "id": "0462",
+    "word": "sensitive",
+    "cn": "敏感到，灵敏的",
+    "example": "He is sensitive to criticism."
+  },
+  {
+    "id": "0463",
+    "word": "tremble",
+    "cn": "颤抖",
+    "example": "He trembled with fear."
+  },
+  {
+    "id": "0464",
+    "word": "tremendous",
+    "cn": "巨大的；精彩的",
+    "example": "They made tremendous progress."
+  },
+  {
+    "id": "0465",
+    "word": "trend",
+    "cn": "趋向，倾向",
+    "example": "The current trend is toward healthy eating."
+  },
+  {
+    "id": "0466",
+    "word": "trial",
+    "cn": "审讯，试验",
+    "example": "The case is still on trial."
+  },
+  {
+    "id": "0467",
+    "word": "apparent",
+    "cn": "显然的，明白的",
+    "example": "It was apparent that he was wrong."
+  },
+  {
+    "id": "0468",
+    "word": "appetite",
+    "cn": "胃口；欲望",
+    "example": "He lost his appetite."
+  },
+  {
+    "id": "0469",
+    "word": "deposit",
+    "cn": "存款，定金；存放，储蓄",
+    "example": "He deposited the money in the bank."
+  },
+  {
+    "id": "0470",
+    "word": "deputy",
+    "cn": "副职，代表",
+    "example": "He was appointed deputy manager."
+  },
+  {
+    "id": "0471",
+    "word": "derive",
+    "cn": "取得，得到；(from)起源于",
+    "example": "Many English words derive from Latin."
+  },
+  {
+    "id": "0472",
+    "word": "descend",
+    "cn": "下来，下降",
+    "example": "The plane descended slowly."
+  },
+  {
+    "id": "0473",
+    "word": "missile",
+    "cn": "导弹",
+    "example": "The missile hit its target."
+  },
+  {
+    "id": "0474",
+    "word": "mission",
+    "cn": "使命；代表团",
+    "example": "He felt it was his mission."
+  },
+  {
+    "id": "0475",
+    "word": "mist",
+    "cn": "薄雾",
+    "example": "The hills were covered in mist."
+  },
+  {
+    "id": "0476",
+    "word": "noticeable",
+    "cn": "显而易见到",
+    "example": "There was a noticeable change."
+  },
+  {
+    "id": "0477",
+    "word": "notify",
+    "cn": "通知，告知",
+    "example": "Please notify me in advance."
+  },
+  {
+    "id": "0478",
+    "word": "notion",
+    "cn": "概念；意图；想法",
+    "example": "He has a clear notion of success."
+  },
+  {
+    "id": "0479",
+    "word": "resemble",
+    "cn": "像，类似于",
+    "example": "She resembles her mother."
+  },
+  {
+    "id": "0480",
+    "word": "reveal",
+    "cn": "揭露",
+    "example": "The report revealed the truth."
+  },
+  {
+    "id": "0481",
+    "word": "revenue",
+    "cn": "收入，岁入，税收",
+    "example": "The company’s revenue increased."
+  },
+  {
+    "id": "0482",
+    "word": "shelter",
+    "cn": "掩蔽处，住所",
+    "example": "They took shelter from the rain."
+  },
+  {
+    "id": "0483",
+    "word": "shield",
+    "cn": "防护物，盾；保护，防护",
+    "example": "He shielded his eyes from the sun."
+  },
+  {
+    "id": "0484",
+    "word": "vital",
+    "cn": "重要的；致命的，生命的",
+    "example": "It is vital to protect the environment."
+  },
+  {
+    "id": "0485",
+    "word": "vitally",
+    "cn": "极度，非常；致命地",
+    "example": "This issue is vitally important."
+  },
+  {
+    "id": "0486",
+    "word": "urban",
+    "cn": "城市的",
+    "example": "Urban life is fast-paced."
+  },
+  {
+    "id": "0487",
+    "word": "urge",
+    "cn": "鼓励，激励",
+    "example": "She urged him to study harder."
+  },
+  {
+    "id": "0488",
+    "word": "urgent",
+    "cn": "急迫的，紧急的",
+    "example": "It is an urgent matter."
+  },
+  {
+    "id": "0489",
+    "word": "usage",
+    "cn": "使用，用法",
+    "example": "Check the usage of the word."
+  },
+  {
+    "id": "0490",
+    "word": "violence",
+    "cn": "强力，暴力",
+    "example": "Violence should be avoided."
+  },
+  {
+    "id": "0491",
+    "word": "violent",
+    "cn": "强暴的",
+    "example": "The storm was violent."
+  },
+  {
+    "id": "0492",
+    "word": "violet",
+    "cn": "紫色的",
+    "example": "She wore a violet dress."
+  },
+  {
+    "id": "0493",
+    "word": "weed",
+    "cn": "杂草，野草",
+    "example": "Pull out the weeds."
+  },
+  {
+    "id": "0494",
+    "word": "welfare",
+    "cn": "福利",
+    "example": "The government cares about public welfare."
+  },
+  {
+    "id": "0495",
+    "word": "whatsoever",
+    "cn": "(用于否定句)任何",
+    "example": "He had no money whatsoever."
+  },
+  {
+    "id": "0496",
+    "word": "whereas",
+    "cn": "然而，但是，尽管",
+    "example": "He likes coffee, whereas I prefer tea."
+  },
+  {
+    "id": "0497",
+    "word": "essential",
+    "cn": "必不可少的，本质的",
+    "example": "Water is essential to life."
+  },
+  {
+    "id": "0498",
+    "word": "estimate",
+    "cn": "估计，估量",
+    "example": "They estimated the cost."
+  },
+  {
+    "id": "0499",
+    "word": "evaluate",
+    "cn": "评估，评价",
+    "example": "We need to evaluate the results."
+  },
+  {
+    "id": "0500",
+    "word": "exceed",
+    "cn": "超过，越出",
+    "example": "The cost exceeded our budget."
+  },
+  {
+    "id": "0501",
+    "word": "exceedingly",
+    "cn": "非常，极其",
+    "example": "She was exceedingly happy."
+  },
+  {
+    "id": "0502",
+    "word": "exclaim",
+    "cn": "呼喊，大声说",
+    "example": "“What a surprise!” she exclaimed."
+  },
+  {
+    "id": "0503",
+    "word": "exclude",
+    "cn": "把…排斥在外，不包括",
+    "example": "The price excludes tax."
+  },
+  {
+    "id": "0504",
+    "word": "exclusive",
+    "cn": "读有的，排他的",
+    "example": "He works in an exclusive club."
+  },
+  {
+    "id": "0505",
+    "word": "excursion",
+    "cn": "远足",
+    "example": "They went on an excursion."
+  },
+  {
+    "id": "0506",
+    "word": "flash",
+    "cn": "闪光，闪耀",
+    "example": "Lightning flashed across the sky."
+  },
+  {
+    "id": "0507",
+    "word": "flee",
+    "cn": "逃走",
+    "example": "The thief fled the scene."
+  },
+  {
+    "id": "0508",
+    "word": "flexible",
+    "cn": "易弯曲的",
+    "example": "The material is flexible."
+  },
+  {
+    "id": "0509",
+    "word": "flock",
+    "cn": "群，(鸟兽等)一群；一伙人",
+    "example": "A flock of birds flew overhead."
+  },
+  {
+    "id": "0510",
+    "word": "hardware",
+    "cn": "五金器具",
+    "example": "He bought some hardware."
+  },
+  {
+    "id": "0511",
+    "word": "harmony",
+    "cn": "和谐，融洽",
+    "example": "They live in harmony."
+  },
+  {
+    "id": "0512",
+    "word": "haste",
+    "cn": "急迫，急忙",
+    "example": "In his haste, he forgot his keys."
+  },
+  {
+    "id": "0513",
+    "word": "hatred",
+    "cn": "憎恶，憎恨",
+    "example": "Hatred leads to violence."
+  },
+  {
+    "id": "0514",
+    "word": "incident",
+    "cn": "事件，事变",
+    "example": "The incident shocked everyone."
+  },
+  {
+    "id": "0515",
+    "word": "index",
+    "cn": "索引，标志",
+    "example": "Look up the word in the index."
+  },
+  {
+    "id": "0516",
+    "word": "infant",
+    "cn": "婴儿",
+    "example": "The infant was sleeping."
+  },
+  {
+    "id": "0517",
+    "word": "infect",
+    "cn": "传染",
+    "example": "The virus can infect humans."
+  },
+  {
+    "id": "0518",
+    "word": "inferior",
+    "cn": "劣等的，次的，下级的",
+    "example": "This product is inferior."
+  },
+  {
+    "id": "0519",
+    "word": "infinite",
+    "cn": "无限的",
+    "example": "The universe seems infinite."
+  },
+  {
+    "id": "0520",
+    "word": "ingredient",
+    "cn": "组成部分",
+    "example": "Salt is an important ingredient."
+  },
+  {
+    "id": "0521",
+    "word": "inhabitant",
+    "cn": "居民",
+    "example": "The inhabitants welcomed the visitors."
+  },
+  {
+    "id": "0522",
+    "word": "jail",
+    "cn": "监狱",
+    "example": "He was sent to jail."
+  },
+  {
+    "id": "0523",
+    "word": "jam",
+    "cn": "果酱；拥挤，堵塞",
+    "example": "There was a traffic jam."
+  },
+  {
+    "id": "0524",
+    "word": "jewel",
+    "cn": "",
+    "example": "She wore a jewel necklace."
+  },
+  {
+    "id": "0525",
+    "word": "joint",
+    "cn": "连接的，共同的",
+    "example": "They made a joint effort."
+  },
+  {
+    "id": "0526",
+    "word": "junior",
+    "cn": "年少的；资历较浅的",
+    "example": "He is a junior employee."
+  },
+  {
+    "id": "0527",
+    "word": "laser",
+    "cn": "激光",
+    "example": "The doctor used a laser."
+  },
+  {
+    "id": "0528",
+    "word": "launch",
+    "cn": "发动，发起",
+    "example": "They launched a new product."
+  },
+  {
+    "id": "0529",
+    "word": "luxury",
+    "cn": "奢侈；奢侈品",
+    "example": "Owning a yacht is a luxury."
+  },
+  {
+    "id": "0530",
+    "word": "magnet",
+    "cn": "磁铁，磁体",
+    "example": "A magnet attracts iron."
+  },
+  {
+    "id": "0531",
+    "word": "male",
+    "cn": "男性的，雄的",
+    "example": "The male bird is colorful."
+  },
+  {
+    "id": "0532",
+    "word": "female",
+    "cn": "女性的，雌的",
+    "example": "The female doctor is experienced."
+  },
+  {
+    "id": "0533",
+    "word": "manual",
+    "cn": "用手的，手工做的；手册",
+    "example": "Please read the manual carefully."
+  },
+  {
+    "id": "0534",
+    "word": "manufacture",
+    "cn": "制造，加工",
+    "example": "The factory manufactures cars."
+  },
+  {
+    "id": "0535",
+    "word": "marine",
+    "cn": "海的；海产的",
+    "example": "Marine life is rich and diverse."
+  },
+  {
+    "id": "0536",
+    "word": "mutual",
+    "cn": "相互的",
+    "example": "They have mutual respect."
+  },
+  {
+    "id": "0537",
+    "word": "naked",
+    "cn": "裸露的",
+    "example": "He walked with naked feet."
+  },
+  {
+    "id": "0538",
+    "word": "negative",
+    "cn": "否定的，消极的",
+    "example": "He gave a negative answer."
+  },
+  {
+    "id": "0539",
+    "word": "neglect",
+    "cn": "忽视，忽略",
+    "example": "He neglected his duties."
+  },
+  {
+    "id": "0540",
+    "word": "origin",
+    "cn": "起源，原点；出身；开端",
+    "example": "The origin of the word is unknown."
+  }
+]
