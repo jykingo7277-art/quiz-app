@@ -1,22 +1,11 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import Papa from "papaparse";
 import TopNav from "./components/TopNav";
+import { QUESTIONS, TOPIC_TREE, SKILLS_BY_TOPIC, PASSAGE_BY_TOPIC, type Question } from "./questionBank";
 
-type Q = {
-  id: string;
-  topic?: string;
-  stem: string;
-  A?: string;
-  B?: string;
-  C?: string;
-  D?: string;
-  answer?: string; // "A" | "B" | "C" | "D"
-};
-
-const LS_WRONG = "quiz_wrong_v1";
-const LS_SEEN = "quiz_seen_ids_v1"; // ✅ 用于“217题出完前不重复”
+const LS_WRONG = "quiz_wrong_v2";
+const LS_SEEN = "quiz_seen_ids_v2";
 
 function shuffle<T>(arr: T[]) {
   const a = [...arr];
@@ -27,30 +16,47 @@ function shuffle<T>(arr: T[]) {
   return a;
 }
 
+type Panel = "tips" | "reading" | null;
+
+function flattenTopics(tree: typeof TOPIC_TREE) {
+  const out: { id: string; label: string }[] = [];
+  for (const n of tree) {
+    out.push({ id: n.id, label: n.label });
+    if (n.children?.length) {
+      for (const c of n.children) out.push({ id: c.id, label: "  " + c.label });
+    }
+  }
+  return out;
+}
+
+function isBigTopic(id: string) {
+  return /^\d$/.test(id);
+}
+function isSubTopic(id: string) {
+  return /^\d+\.\d+$/.test(id);
+}
+
 export default function Page() {
-  const [all, setAll] = useState<Q[]>([]);
   const [loading, setLoading] = useState(true);
 
   const [topic, setTopic] = useState<string>("全部");
   const [count, setCount] = useState<number>(10);
 
-  const [session, setSession] = useState<Q[]>([]);
+  const [session, setSession] = useState<Question[]>([]);
   const [idx, setIdx] = useState<number>(0);
 
   const [chosen, setChosen] = useState<string>("");
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  const [wrongSet, setWrongSet] = useState<
-    Record<string, { wrongCount: number; lastWrongAt: number }>
-  >({});
-
+  const [wrongSet, setWrongSet] = useState<Record<string, { wrongCount: number; lastWrongAt: number }>>({});
   const [seenIds, setSeenIds] = useState<string[]>([]);
 
-  // ---- THEME: 底色统一用 Top bar 的颜色（这里统一用一个深色底）----
-  // 如果你 TopNav 实际颜色不同，就把这个改成 TopNav 同款颜色
+  const [panel, setPanel] = useState<Panel>(null);
+
   const TOP_BG = "#0b1220";
 
-  // load wrongSet + seenIds + csv
+  const all = useMemo(() => QUESTIONS, []);
+
   useEffect(() => {
     try {
       const rawWrong = localStorage.getItem(LS_WRONG);
@@ -62,72 +68,51 @@ export default function Page() {
       if (rawSeen) setSeenIds(JSON.parse(rawSeen));
     } catch {}
 
-    fetch("/question_bank_dedup.csv")
-      .then((r) => r.text())
-      .then((csv) => {
-        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
-        const rows = (parsed.data as any[]).map((r) => ({
-          id: String(r.id || "").trim(),
-          topic: String(r.topic || "").trim() || "未分类",
-          stem: String(r.stem || "").trim(),
-          A: r.A ? String(r.A).trim() : "",
-          B: r.B ? String(r.B).trim() : "",
-          C: r.C ? String(r.C).trim() : "",
-          D: r.D ? String(r.D).trim() : "",
-          answer: r.answer ? String(r.answer).trim().toUpperCase() : "",
-        }));
-        setAll(rows.filter((q) => q.id && q.stem));
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
+    setLoading(false);
   }, []);
 
-  // persist wrongSet
   useEffect(() => {
     try {
       localStorage.setItem(LS_WRONG, JSON.stringify(wrongSet));
     } catch {}
   }, [wrongSet]);
 
-  // persist seenIds
   useEffect(() => {
     try {
       localStorage.setItem(LS_SEEN, JSON.stringify(seenIds));
     } catch {}
   }, [seenIds]);
 
-  const topics = useMemo(() => {
-    const map = new Map<string, number>();
-    for (const q of all) {
-      const t = q.topic || "未分类";
-      map.set(t, (map.get(t) || 0) + 1);
-    }
-    const list = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
-    return ["全部", ...list.map(([t]) => t)];
-  }, [all]);
+  const topicOptions = useMemo(() => [{ id: "全部", label: "全部" }, ...flattenTopics(TOPIC_TREE)], []);
 
   const filtered = useMemo(() => {
     if (topic === "全部") return all;
-    return all.filter((q) => (q.topic || "未分类") === topic);
+
+    // 大类：包含本大类下全部子类（例如选 4 -> 4.1/4.2/4.3）
+    if (isBigTopic(topic)) {
+      return all.filter((q) => q.bigId === topic);
+    }
+
+    // 子类：精确匹配
+    if (isSubTopic(topic)) {
+      return all.filter((q) => q.topicId === topic);
+    }
+
+    return all;
   }, [all, topic]);
 
   const wrongCount = Object.keys(wrongSet).length;
 
-  // ✅ 核心：在“总题量 all.length(=217)”出完前不重复；出完后再重复
-  function pickNoRepeat(pool: Q[], n: number) {
-    if (!pool.length) return { picked: [] as Q[], nextSeen: seenIds };
+  // ✅ 总题量循环：all.length 出完前不重复；出完后重置
+  function pickNoRepeat(pool: Question[], n: number) {
+    if (!pool.length) return { picked: [] as Question[], nextSeen: seenIds };
 
-    // 只对“总题量 all.length”做循环；当已见 >= all.length 就重置
     let nextSeen = [...seenIds];
-    if (all.length > 0 && nextSeen.length >= all.length) {
-      nextSeen = [];
-    }
+    if (all.length > 0 && nextSeen.length >= all.length) nextSeen = [];
 
     const seenSet = new Set(nextSeen);
     let candidates = pool.filter((q) => !seenSet.has(q.id));
 
-    // 如果当前分类/模式下可选题不足：说明该 pool 已经被“见过”耗尽了
-    // 这时也重置 seen（相当于开启下一轮循环）
     if (candidates.length < n) {
       nextSeen = [];
       candidates = pool;
@@ -135,23 +120,19 @@ export default function Page() {
 
     const picked = shuffle(candidates).slice(0, n);
     const pickedIds = picked.map((q) => q.id);
-
-    // 把本次抽到的题加入 seen（用于下一次避免重复）
     const merged = [...nextSeen, ...pickedIds];
-
-    // 防御：不让 seen 无限增长（理论上到 all.length 就会重置）
     const capped = all.length > 0 ? merged.slice(-Math.max(all.length, 1)) : merged;
-
     return { picked, nextSeen: capped };
   }
 
   function startSession(mode: "topic" | "wrong") {
-    let pool: Q[] = [];
+    setPanel(null);
+
     if (mode === "wrong") {
       const ids = new Set(Object.keys(wrongSet));
-      pool = all.filter((q) => ids.has(q.id));
+      const pool = all.filter((q) => ids.has(q.id));
       const n = Math.max(1, Math.min(count || 10, pool.length || 1));
-      const picked = shuffle(pool).slice(0, n); // 错题本模式保持随机即可
+      const picked = shuffle(pool).slice(0, n);
       setSession(picked);
       setIdx(0);
       setChosen("");
@@ -159,8 +140,7 @@ export default function Page() {
       return;
     }
 
-    // mode === "topic"
-    pool = filtered;
+    const pool = filtered;
     const n = Math.max(1, Math.min(count || 10, pool.length || 1));
     const { picked, nextSeen } = pickNoRepeat(pool, n);
     setSeenIds(nextSeen);
@@ -172,6 +152,19 @@ export default function Page() {
   }
 
   const cur = session[idx];
+
+  const curTips = useMemo(() => {
+    if (!cur) return "";
+    // 优先子类技巧；没有就回退到大类技巧
+    return SKILLS_BY_TOPIC[cur.topicId] || SKILLS_BY_TOPIC[cur.bigId] || "";
+  }, [cur]);
+
+  const curReading = useMemo(() => {
+    if (!cur) return "";
+    return PASSAGE_BY_TOPIC[cur.topicId] || "";
+  }, [cur]);
+
+  const hasReading = !!curReading;
 
   function submit() {
     if (!cur || !chosen) return;
@@ -190,7 +183,6 @@ export default function Page() {
         };
       });
     } else {
-      // 答对时：把错题本里这题移除
       setWrongSet((prev) => {
         if (!prev[cur.id]) return prev;
         const copy = { ...prev };
@@ -201,9 +193,10 @@ export default function Page() {
   }
 
   function next() {
+    setPanel(null);
     if (!session.length) return;
     if (idx >= session.length - 1) {
-      setIdx(session.length); // finished
+      setIdx(session.length);
       return;
     }
     setIdx((v) => v + 1);
@@ -275,6 +268,12 @@ export default function Page() {
     fontWeight: 800,
   };
 
+  const btnDisabled: React.CSSProperties = {
+    ...btnGhost,
+    opacity: 0.45,
+    cursor: "not-allowed",
+  };
+
   const selectStyle: React.CSSProperties = {
     marginLeft: 8,
     padding: 6,
@@ -283,6 +282,7 @@ export default function Page() {
     color: "rgba(255,255,255,0.92)",
     border: "1px solid rgba(255,255,255,0.18)",
     fontWeight: 800,
+    maxWidth: 420,
   };
 
   const inputStyle: React.CSSProperties = {
@@ -297,38 +297,32 @@ export default function Page() {
   };
 
   const finished = session.length > 0 && idx >= session.length;
-
-  // ✅ 需求 1：选了答案后，“提交”按钮变红；提交后恢复正常颜色
   const submitBtnStyle = chosen && !submitted ? btnDanger : btnPrimary;
+
+  const showPanel = (p: Panel) => {
+    if (!cur) return;
+    if (p === "reading" && !hasReading) return;
+    setPanel((prev) => (prev === p ? null : p));
+  };
 
   return (
     <div style={{ minHeight: "100vh", background: TOP_BG }}>
       <TopNav title="学习系统" />
 
       <div style={pageWrap}>
-        <h1 style={{ fontSize: 22, marginBottom: 8, color: "rgba(255,255,255,0.92)" }}>
-          本地刷题 App（MVP）
-        </h1>
+        <h1 style={{ fontSize: 22, marginBottom: 8, color: "rgba(255,255,255,0.92)" }}>本地刷题 App（MVP）</h1>
 
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            flexWrap: "wrap",
-            alignItems: "center",
-            marginBottom: 12,
-          }}
-        >
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center", marginBottom: 12 }}>
           <div style={{ ...card, minWidth: 240 }}>
             <div style={{ fontSize: 13, opacity: 0.85, color: "rgba(255,255,255,0.90)" }}>本机错题本</div>
             <div style={{ marginTop: 6, color: "rgba(255,255,255,0.95)" }}>
               错题数量：<b>{wrongCount}</b>
             </div>
             <div style={{ marginTop: 10, display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <button onClick={() => startSession("wrong")} disabled={wrongCount === 0} style={btnGhost}>
+              <button onClick={() => startSession("wrong")} disabled={wrongCount === 0} style={wrongCount === 0 ? btnDisabled : btnGhost}>
                 刷错题
               </button>
-              <button onClick={clearWrongBook} disabled={wrongCount === 0} style={btnGhost}>
+              <button onClick={clearWrongBook} disabled={wrongCount === 0} style={wrongCount === 0 ? btnDisabled : btnGhost}>
                 清空错题本
               </button>
             </div>
@@ -339,9 +333,9 @@ export default function Page() {
               <label style={{ fontSize: 13, color: "rgba(255,255,255,0.95)" }}>
                 语法点：
                 <select value={topic} onChange={(e) => setTopic(e.target.value)} style={selectStyle}>
-                  {topics.map((t) => (
-                    <option key={t} value={t} style={{ background: TOP_BG, color: "#fff" }}>
-                      {t}
+                  {topicOptions.map((t) => (
+                    <option key={t.id} value={t.id} style={{ background: TOP_BG, color: "#fff" }}>
+                      {t.label}
                     </option>
                   ))}
                 </select>
@@ -369,9 +363,28 @@ export default function Page() {
                   setSeenIds([]);
                 }}
                 style={btnGhost}
-                title="重置 217 题不重复循环"
+                title="重置不重复循环"
               >
                 重置记录
+              </button>
+
+              {/* ✅ 新增：答题技巧 / 阅读资料 */}
+              <button
+                onClick={() => showPanel("tips")}
+                disabled={!cur || !curTips}
+                style={!cur || !curTips ? btnDisabled : btnGhost}
+                title={!cur ? "先开始刷题" : !curTips ? "没有技巧资料" : "查看本题所属分类答题技巧"}
+              >
+                答题技巧
+              </button>
+
+              <button
+                onClick={() => showPanel("reading")}
+                disabled={!cur || !hasReading}
+                style={!cur || !hasReading ? btnDisabled : btnGhost}
+                title={!cur ? "先开始刷题" : !hasReading ? "没有阅读资料" : "查看本题阅读/完形原文"}
+              >
+                阅读资料
               </button>
             </div>
 
@@ -384,12 +397,33 @@ export default function Page() {
           </div>
         </div>
 
+        {/* ✅ 面板区（答题技巧 / 阅读资料） */}
+        {panel ? (
+          <div style={{ ...card, marginBottom: 12 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+              <div style={{ color: "rgba(255,255,255,0.95)", fontWeight: 900 }}>
+                {panel === "tips" ? "答题技巧" : "阅读资料"}
+                {cur ? (
+                  <span style={{ opacity: 0.8, fontWeight: 700, marginLeft: 10 }}>
+                    （分类：{cur.topicId} / 大类：{cur.bigId}）
+                  </span>
+                ) : null}
+              </div>
+              <button onClick={() => setPanel(null)} style={btnGhost}>
+                关闭
+              </button>
+            </div>
+
+            <div style={{ marginTop: 10, whiteSpace: "pre-wrap", lineHeight: 1.65, color: "rgba(255,255,255,0.92)" }}>
+              {panel === "tips" ? (curTips || "没有技巧资料。") : (curReading || "没有阅读资料。")}
+            </div>
+          </div>
+        ) : null}
+
         {/* 主内容 */}
         <div style={{ ...card }}>
           {session.length === 0 ? (
-            <div style={{ opacity: 0.9, color: "rgba(255,255,255,0.95)" }}>
-              还没开始刷题。先选语法点，然后点「开始刷题」。
-            </div>
+            <div style={{ opacity: 0.9, color: "rgba(255,255,255,0.95)" }}>还没开始刷题。先选语法点，然后点「开始刷题」。</div>
           ) : finished ? (
             <div style={{ color: "rgba(255,255,255,0.95)" }}>
               ✅ 本轮完成（共 <b>{session.length}</b> 题）
@@ -402,9 +436,7 @@ export default function Page() {
                 进度：{idx + 1} / {session.length}（ID: {cur.id}）
               </div>
 
-              <div style={{ fontSize: 18, lineHeight: 1.6, marginBottom: 12, color: "rgba(255,255,255,0.97)" }}>
-                {cur.stem}
-              </div>
+              <div style={{ fontSize: 18, lineHeight: 1.6, marginBottom: 12, color: "rgba(255,255,255,0.97)" }}>{cur.stem}</div>
 
               <div style={{ display: "grid", gap: 8 }}>
                 {(["A", "B", "C", "D"] as const).map((opt) => {
@@ -457,7 +489,7 @@ export default function Page() {
               </div>
 
               <div style={{ marginTop: 12, display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-                <button onClick={submit} disabled={!chosen || submitted} style={submitBtnStyle}>
+                <button onClick={submit} disabled={!chosen || submitted} style={!chosen || submitted ? btnDisabled : submitBtnStyle}>
                   提交
                 </button>
 
@@ -469,10 +501,7 @@ export default function Page() {
                   <div style={{ marginLeft: 8, fontSize: 13, color: "rgba(255,255,255,0.95)" }}>
                     正确答案：<b>{cur.answer || "（无）"}</b>
                     {wrongSet[cur.id] ? (
-                      <button
-                        onClick={() => removeFromWrong(cur.id)}
-                        style={{ marginLeft: 10, ...btnGhost, padding: "6px 10px" }}
-                      >
+                      <button onClick={() => removeFromWrong(cur.id)} style={{ marginLeft: 10, ...btnGhost, padding: "6px 10px" }}>
                         从错题本移除
                       </button>
                     ) : null}
@@ -481,6 +510,10 @@ export default function Page() {
               </div>
             </div>
           )}
+        </div>
+
+        <div style={{ marginTop: 10, fontSize: 12, opacity: 0.75, color: "rgba(255,255,255,0.85)" }}>
+          题库来源：分类练习题.docx（当前共 {all.length} 题）
         </div>
       </div>
     </div>

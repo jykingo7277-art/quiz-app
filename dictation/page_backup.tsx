@@ -17,16 +17,16 @@ type Plan = {
 type Phase = "idle" | "word" | "input" | "done";
 
 const LS_DAILY_COUNT = "dictation_daily_count";
-const LS_PLAN_PREFIX = "dictation_plan_"; // + YYYY-MM-DD => Plan
-const LS_TODAY_IDS_PREFIX = "dictation_today_ids_"; // + YYYY-MM-DD => string[] (固定当日清单)
+const LS_PLAN_PREFIX = "dictation_plan_"; // + YYYY-MM-DD
 
-// ✅ progression: 不重复直到全部出完（跨天/跨次）
+// ✅ upgraded progression
 const LS_SEEN_IDS = "dictation_seen_ids_v1"; // string[]
 const LS_CYCLE = "dictation_cycle_v1"; // number
+const LS_DONE_PREFIX = "dictation_done_"; // + YYYY-MM-DD => timestamp
 
-const DEFAULT_DAILY_COUNT = 50;
+const DEFAULT_DAILY_COUNT = 15;
 const MIN_COUNT = 10;
-const MAX_COUNT = 50;
+const MAX_COUNT = 20;
 
 function todayKeyLocal(): string {
   const d = new Date();
@@ -64,14 +64,15 @@ function saveJson(key: string, value: any) {
   } catch {}
 }
 
-// 例句挖空：整词匹配 -> 宽松子串匹配 -> 找不到就不挖空
-function buildBlankedExample(
-  example: string,
-  word: string
-): null | { before: string; match: string; after: string } {
+// 例句挖空（不再提示“找不到挖空”）：
+// 1) 尝试整词匹配（word boundary，大小写不敏感）
+// 2) 若失败，尝试更宽松的“子串匹配”（大小写不敏感）
+// 3) 若仍失败，返回 null（直接显示原句，不提示）
+function buildBlankedExample(example: string, word: string): null | { before: string; match: string; after: string } {
   const w = word.trim();
   if (!w) return null;
 
+  // ① 整词匹配
   const boundaryRe = new RegExp(`\\b${escapeRegExp(w)}\\b`, "i");
   let m = boundaryRe.exec(example);
   if (m && m.index != null) {
@@ -80,6 +81,7 @@ function buildBlankedExample(
     return { before: example.slice(0, idx), match, after: example.slice(idx + match.length) };
   }
 
+  // ② 宽松子串匹配（不考虑时态/复数等，你要求不处理这些）
   const looseRe = new RegExp(escapeRegExp(w), "i");
   m = looseRe.exec(example);
   if (m && m.index != null) {
@@ -88,9 +90,11 @@ function buildBlankedExample(
     return { before: example.slice(0, idx), match, after: example.slice(idx + match.length) };
   }
 
+  // ③ 仍找不到就不挖空（但不提示）
   return null;
 }
 
+// 逐字母反馈（只做提示，不做时态/复数等推断）
 function compareLetters(input: string, target: string): { chars: string[]; ok: boolean[] } {
   const a = input.split("");
   const b = target.split("");
@@ -116,9 +120,6 @@ export default function DictationPage() {
   const [phase, setPhase] = useState<Phase>("idle");
 
   const [todayKey, setTodayKey] = useState<string>("");
-
-  // ✅ todayIds：固定当日清单；remainingIds：当日剩余队列（会减少）
-  const [todayIds, setTodayIds] = useState<string[]>([]);
   const [remainingIds, setRemainingIds] = useState<string[]>([]);
   const [currentId, setCurrentId] = useState<string | null>(null);
 
@@ -126,11 +127,15 @@ export default function DictationPage() {
   const [submitted, setSubmitted] = useState(false);
   const [wasCorrect, setWasCorrect] = useState<boolean | null>(null);
 
-  // 仅用于：加载/音频缺失等提示
+  // 状态消息：仅用于加载/音频缺失等（拼写错不再写 statusMsg）
   const [statusMsg, setStatusMsg] = useState<string>("");
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // 用 token 控制“取消正在播放/正在等待的流程”
   const playTokenRef = useRef(0);
+
+  // 防 StrictMode / 重渲染导致同一词自动播放多次
   const lastAutoPlayKeyRef = useRef<string | null>(null);
 
   const currentItem = useMemo(() => {
@@ -145,7 +150,7 @@ export default function DictationPage() {
 
   const remainingCount = remainingIds.length;
 
-  // ====== 音频控制 ======
+  // ====== 音频控制（关键修复：stop 不再改变 token） ======
   const stopCurrentAudioOnly = () => {
     const a = audioRef.current;
     if (!a) return;
@@ -156,6 +161,7 @@ export default function DictationPage() {
   };
 
   const cancelPlaybackFlow = () => {
+    // 取消后续 loop / sleep / 自动跳转
     playTokenRef.current += 1;
     stopCurrentAudioOnly();
   };
@@ -165,6 +171,7 @@ export default function DictationPage() {
       if (playTokenRef.current !== token) return resolve();
 
       try {
+        // 新播放必须停止旧播放（不叠加），但不能改 token（否则会把自身循环打断）
         stopCurrentAudioOnly();
 
         const a = new Audio(`${src}?v=${Date.now()}`);
@@ -187,9 +194,13 @@ export default function DictationPage() {
       for (let i = 0; i < times; i++) {
         if (playTokenRef.current !== token) return;
         await playSrcOnce(src, token);
-        if (i < times - 1) await sleep(pauseMs);
+
+        if (i < times - 1) {
+          await sleep(pauseMs); // 你要求：停两秒
+        }
       }
     } catch {
+      // 音频缺失容错
       setStatusMsg(`⚠️ 单词音频缺失或无法播放：/audio_word/${item.id}.mp3`);
     }
   };
@@ -204,7 +215,7 @@ export default function DictationPage() {
     }
   };
 
-  // ====== localStorage helpers ======
+  // ====== localStorage ======
   const persistPlan = (ids: string[]) => {
     const tk = todayKey || todayKeyLocal();
     try {
@@ -213,26 +224,11 @@ export default function DictationPage() {
     } catch {}
   };
 
-  const persistTodayIds = (ids: string[]) => {
-    const tk = todayKey || todayKeyLocal();
-    saveJson(LS_TODAY_IDS_PREFIX + tk, ids);
-  };
-
-  const clearTodayPlan = () => {
+  const markDoneToday = () => {
     const tk = todayKey || todayKeyLocal();
     try {
-      localStorage.removeItem(LS_PLAN_PREFIX + tk);
-      localStorage.removeItem(LS_TODAY_IDS_PREFIX + tk);
+      localStorage.setItem(LS_DONE_PREFIX + tk, String(Date.now()));
     } catch {}
-    setTodayIds([]);
-    setRemainingIds([]);
-    setCurrentId(null);
-    setPhase("idle");
-    setInput("");
-    setSubmitted(false);
-    setWasCorrect(null);
-    lastAutoPlayKeyRef.current = null;
-    setStatusMsg("已清空今日计划。请重新开始今日任务。");
   };
 
   // ====== 初始加载 ======
@@ -265,23 +261,21 @@ export default function DictationPage() {
 
         setVocab(data);
         setVocabById(map);
+        setLoading(false);
 
-        // 恢复今日计划（remaining + todayIds）
+        // 恢复今日计划
         const tk = todayKeyLocal();
         try {
-          const rawToday = localStorage.getItem(LS_TODAY_IDS_PREFIX + tk);
-          if (rawToday) setTodayIds(JSON.parse(rawToday));
-
           const rawPlan = localStorage.getItem(LS_PLAN_PREFIX + tk);
           if (rawPlan) {
             const plan = JSON.parse(rawPlan) as Plan;
             if (plan?.remainingIds?.length) {
               setRemainingIds(plan.remainingIds);
               setCurrentId(plan.remainingIds[0]);
+              // ✅ 修复“单词重复出现时不自动播放”：恢复时先清空 autoplay key
               lastAutoPlayKeyRef.current = null;
               setPhase("word");
               setStatusMsg("已恢复今日任务。");
-              setLoading(false);
               return;
             }
           }
@@ -293,7 +287,6 @@ export default function DictationPage() {
         }
 
         setPhase("idle");
-        setLoading(false);
       } catch (e: any) {
         setLoading(false);
         setLoadError(e?.message ?? "加载失败");
@@ -307,17 +300,14 @@ export default function DictationPage() {
     } catch {}
   }, [dailyCount]);
 
-  // ====== 开始今日任务（如果已有今日固定清单，就复用；否则生成新的） ======
+  // ====== 开始今日任务（seen_ids + cycle，不重复直到全部出完） ======
   const startToday = () => {
     if (!vocab.length) return;
 
     const tk = todayKey || todayKeyLocal();
 
-    // 1) 如果已有 remaining 计划，优先恢复（当天可重复练：你随时可继续）
+    // 已有计划则恢复
     try {
-      const rawToday = localStorage.getItem(LS_TODAY_IDS_PREFIX + tk);
-      if (rawToday) setTodayIds(JSON.parse(rawToday));
-
       const raw = localStorage.getItem(LS_PLAN_PREFIX + tk);
       if (raw) {
         const plan = JSON.parse(raw) as Plan;
@@ -335,23 +325,6 @@ export default function DictationPage() {
       }
     } catch {}
 
-    // 2) 如果已有今日固定清单（todayIds），但 remaining 被清空了：直接从头再练
-    const savedTodayIds = loadJson<string[]>(LS_TODAY_IDS_PREFIX + tk, []);
-    if (savedTodayIds.length > 0) {
-      setTodayIds(savedTodayIds);
-      setRemainingIds(savedTodayIds);
-      persistPlan(savedTodayIds);
-      setCurrentId(savedTodayIds[0]);
-      lastAutoPlayKeyRef.current = null;
-      setPhase("word");
-      setInput("");
-      setSubmitted(false);
-      setWasCorrect(null);
-      setStatusMsg("已加载今日固定清单，可重复练习。");
-      return;
-    }
-
-    // 3) 今日第一次：生成固定清单（n<=50；跨天/跨次不重复直到全部出完）
     const n = clamp(dailyCount, MIN_COUNT, MAX_COUNT);
 
     let cycle = 1;
@@ -375,10 +348,10 @@ export default function DictationPage() {
       ids = unseen.slice(0, n);
       seen = [...seen, ...ids];
     } else {
-      // 本轮剩余用完，开启新一轮
+      // 本轮剩余先用完，再开启新一轮
       ids = [...unseen];
       cycle += 1;
-      seen = [];
+      seen = []; // reset for new cycle
 
       const need = n - ids.length;
       const extra = allIds.slice(0, need);
@@ -391,20 +364,15 @@ export default function DictationPage() {
       localStorage.setItem(LS_CYCLE, String(cycle));
     } catch {}
 
-    // ✅ 保存当日固定清单
-    setTodayIds(ids);
-    persistTodayIds(ids);
-
     setRemainingIds(ids);
-    persistPlan(ids);
-
     setCurrentId(ids[0] ?? null);
     lastAutoPlayKeyRef.current = null;
     setPhase(ids.length ? "word" : "done");
     setInput("");
     setSubmitted(false);
     setWasCorrect(null);
-    setStatusMsg("已生成今日任务（固定清单）。");
+    persistPlan(ids);
+    setStatusMsg("已生成今日任务。");
   };
 
   // ====== 自动播放：word 阶段自动播放×3，间隔2秒，播完进入 input ======
@@ -419,8 +387,9 @@ export default function DictationPage() {
     const token = ++playTokenRef.current;
 
     (async () => {
-      setStatusMsg("");
+      setStatusMsg(""); // 清掉非必要提示
 
+      // 播单词 3 次，间隔 2 秒
       const src = `/audio_word/${currentItem.id}.mp3`;
       try {
         for (let i = 0; i < 3; i++) {
@@ -432,6 +401,7 @@ export default function DictationPage() {
         setStatusMsg(`⚠️ 单词音频缺失或无法播放：/audio_word/${currentItem.id}.mp3`);
       }
 
+      // 进入输入阶段（若期间未被取消/切换）
       if (playTokenRef.current !== token) return;
       setPhase((p) => (p === "word" ? "input" : p));
       setInput("");
@@ -442,49 +412,30 @@ export default function DictationPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, currentId]);
 
-  // ====== 队列推进工具（修复版：当天可无限重复） ======
+  // ====== 队列推进工具 ======
   const goToNextWord = (newQueue: string[]) => {
     setRemainingIds(newQueue);
     persistPlan(newQueue);
 
-    // ✅ 如果当日 remaining 做完：重置为 todayIds，从头再练（无限重复）
     if (newQueue.length === 0) {
-      const tk = todayKey || todayKeyLocal();
-
-      let ids = todayIds;
-      if (!ids || ids.length === 0) {
-        ids = loadJson<string[]>(LS_TODAY_IDS_PREFIX + tk, []);
-        setTodayIds(ids);
-      }
-
-      if (!ids || ids.length === 0) {
-        setCurrentId(null);
-        setPhase("done");
-        setStatusMsg("🎉 今日完成！（找不到今日固定清单，请点开始今日任务）");
-        return;
-      }
-
-      setStatusMsg("🎉 今日完成！已重置，可再练一次。");
-      setRemainingIds(ids);
-      persistPlan(ids);
-      setCurrentId(ids[0]);
-      lastAutoPlayKeyRef.current = null;
-      setPhase("word");
-      setInput("");
-      setSubmitted(false);
-      setWasCorrect(null);
+      setCurrentId(null);
+      setPhase("done");
+      setStatusMsg("🎉 今日完成！");
+      markDoneToday();
       return;
     }
 
     setCurrentId(newQueue[0]);
+    // ✅ 关键：每次去下一词（包括只有一个词时重复出现），都要允许自动播
     lastAutoPlayKeyRef.current = null;
+
     setPhase("word");
     setInput("");
     setSubmitted(false);
     setWasCorrect(null);
   };
 
-  // 错 / 跳过：把当前词放到队尾（不减少剩余）
+  // 错 / 跳过：把当前词放到队尾，不减少剩余
   const rotateCurrentToTail = () => {
     if (!currentItem) return;
     if (!remainingIds.length) return;
@@ -495,22 +446,24 @@ export default function DictationPage() {
     goToNextWord(nextQueue);
   };
 
-  // ====== 提交 ======
+  // ====== 提交（正确：移除；错误：停5秒自动进入下一词且当前词队尾） ======
   const submit = async () => {
     if (!currentItem) return;
     if (phase !== "input") return;
 
+    // 停掉可能残留的播放
     cancelPlaybackFlow();
 
     const raw = input.trim();
     const target = currentItem.word.trim();
+
     const ok = raw.length > 0 && raw.toLowerCase() === target.toLowerCase();
 
     setSubmitted(true);
     setWasCorrect(ok);
 
     if (ok) {
-      // 正确：播例句一次 → 移除该词 → 下一词
+      // 正确：播放例句×1 → 移除该词 → 下一词自动播放
       await playExampleOnce(currentItem);
 
       const nextQueue = remainingIds.filter((id) => id !== currentItem.id);
@@ -518,7 +471,7 @@ export default function DictationPage() {
       return;
     }
 
-    // 错误：停 5 秒 → 当前词去队尾 → 下一词
+    // 错误：不弹任何“错误提示对话框”，停留 5 秒后自动进入下一词（该词队尾）
     const token = ++playTokenRef.current;
     await sleep(5000);
     if (playTokenRef.current !== token) return;
@@ -526,14 +479,14 @@ export default function DictationPage() {
     rotateCurrentToTail();
   };
 
-  // 手动：播放单词×3（间隔2秒）
+  // ====== 手动按钮：播放单词×3（含2秒间隔） ======
   const replayWord = async () => {
     if (!currentItem) return;
     setStatusMsg("");
     await playWordTimesWithPause(currentItem, 3, 2000);
   };
 
-  // 跳过：当前词去队尾
+  // ====== 跳过此词：同“错误逻辑”一样（不减少剩余，放队尾，立刻下一词） ======
   const skipThisWord = () => {
     cancelPlaybackFlow();
     rotateCurrentToTail();
@@ -619,22 +572,16 @@ export default function DictationPage() {
       <div style={{ padding: 20 }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <h1 style={{ fontSize: 22, margin: 0 }}>听写 Dictation</h1>
-
           <div style={{ opacity: 0.75, marginTop: 6 }}>
             今日剩余：<b>{remainingCount}</b>
             {todayKey ? <>　|　日期：{todayKey}</> : null}
-            {todayIds.length ? (
-              <>
-                　|　今日固定：<b>{todayIds.length}</b>
-              </>
-            ) : null}
           </div>
 
           {/* 设置区 */}
           <div style={{ ...cardStyle, marginTop: 14 }}>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                <div style={{ fontWeight: 700 }}>每日学习数量（最多50）</div>
+                <div style={{ fontWeight: 700 }}>每日学习数量</div>
                 <select
                   style={selectStyle}
                   value={dailyCount}
@@ -654,7 +601,6 @@ export default function DictationPage() {
                 <button style={buttonStyle} onClick={startToday}>
                   开始今日任务
                 </button>
-
                 <button
                   style={ghostButtonStyle}
                   onClick={() => {
@@ -664,17 +610,13 @@ export default function DictationPage() {
                 >
                   停止播放
                 </button>
-
-                <button style={ghostButtonStyle} onClick={clearTodayPlan}>
-                  清空今日计划
-                </button>
               </div>
 
               <div style={{ marginLeft: "auto", opacity: 0.8, fontSize: 13 }}>词库条数：{vocab.length}</div>
             </div>
           </div>
 
-          {/* 系统提示 */}
+          {/* 仅用于系统提示（非拼写错误提示） */}
           {statusMsg ? (
             <div style={{ marginTop: 12, ...cardStyle }}>
               <div style={{ whiteSpace: "pre-wrap" }}>{statusMsg}</div>
@@ -684,15 +626,13 @@ export default function DictationPage() {
           {/* 训练区 */}
           <div style={{ ...cardStyle, marginTop: 14 }}>
             {phase === "idle" ? (
-              <div style={{ opacity: 0.85 }}>
-                点击「开始今日任务」开始听写。系统会在本地保存今日固定清单与进度；今日做完会自动重置，可重复练习。
-              </div>
+              <div style={{ opacity: 0.85 }}>点击「开始今日任务」开始听写。系统会在本地保存今日进度，刷新不丢失。</div>
             ) : null}
 
             {phase === "done" ? (
               <div>
-                <div style={{ fontSize: 18, fontWeight: 800 }}>🎉 已结束</div>
-                <div style={{ opacity: 0.8, marginTop: 6 }}>点「开始今日任务」开始（如果今日已有固定清单，会直接复用）。</div>
+                <div style={{ fontSize: 18, fontWeight: 800 }}>🎉 今日完成！</div>
+                <div style={{ opacity: 0.8, marginTop: 6 }}>你可以明天再来，或现在点「开始今日任务」生成新任务。</div>
               </div>
             ) : null}
 
@@ -764,6 +704,7 @@ export default function DictationPage() {
                       <span style={{ opacity: 0.95 }}>{blanked.after}</span>
                     </div>
                   ) : (
+                    // 不再提示“无法挖空”，直接显示原句
                     <div style={{ fontSize: 18, lineHeight: 1.6, opacity: 0.95 }}>{currentItem.example}</div>
                   )}
 
@@ -798,7 +739,7 @@ export default function DictationPage() {
                       </button>
                     </div>
 
-                    {/* 逐字母反馈 */}
+                    {/* 逐字母反馈（错误时会停留5秒后自动切下一词） */}
                     {submitted && currentItem ? (
                       <div style={{ marginTop: 10 }}>
                         <div style={{ opacity: 0.8, fontSize: 13, marginBottom: 6 }}>逐字母反馈：</div>
@@ -807,7 +748,13 @@ export default function DictationPage() {
                             const ok = letterFeedback?.ok[idx];
                             const show = ch === "" ? "·" : ch;
                             return (
-                              <span key={idx} style={{ color: ok ? "#22c55e" : "#ef4444", marginRight: 2 }}>
+                              <span
+                                key={idx}
+                                style={{
+                                  color: ok ? "#22c55e" : "#ef4444",
+                                  marginRight: 2,
+                                }}
+                              >
                                 {show}
                               </span>
                             );
@@ -829,7 +776,24 @@ export default function DictationPage() {
 
             {(phase === "word" || phase === "input") && !currentItem ? (
               <div style={{ opacity: 0.85 }}>
-                当前词条不存在或已损坏。你可以点「清空今日计划」再重新开始。
+                当前词条不存在或已损坏。你可以点击「开始今日任务」重新生成，或清空本地计划后重试。
+                <div style={{ marginTop: 10 }}>
+                  <button
+                    style={ghostButtonStyle}
+                    onClick={() => {
+                      const tk = todayKey || todayKeyLocal();
+                      try {
+                        localStorage.removeItem(LS_PLAN_PREFIX + tk);
+                      } catch {}
+                      setRemainingIds([]);
+                      setCurrentId(null);
+                      setPhase("idle");
+                      setStatusMsg("已清空今日计划。请重新开始今日任务。");
+                    }}
+                  >
+                    清空今日计划
+                  </button>
+                </div>
               </div>
             ) : null}
           </div>
